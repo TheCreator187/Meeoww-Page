@@ -1,0 +1,138 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #12161c;
+    color: #fff;
+}
+
+/* Body and HTML */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b1f26;
+    padding: 10px 30px;
+    flex-shrink: 0;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-button {
+    padding: 5px 15px;
+    background-color: #3e4c61;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+    min-height: 30%; /* Adjusted height */
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-image {
+    width: 35%;
+    height: 100%;
+    background-color: #3e4c61;
+    border-radius: 10px;
+}
+
+/* Grid Section */
+.grid-section {
+    flex-grow: 1;
+    padding: 10px 30px;
+    min-height: 20%; /* Adjusted height */
+}
+
+.grid-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: 70%;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid-item {
+    width: 90%;
+    height: 90%;
+    background-color: #3e4c61;
+    border-radius: 10px;
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px 30px;
+    min-height: 20%; /* Adjusted height */
+}
+
+.info {
+    width: 60%;
+}
+
+.info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.info-image {
+    width: 50%;
+    height: 60%; /* Adjusted height */
+    background-color: #3e4c61;
+    border-radius: 10px;
+}
+
+.info-button {
+    padding: 5px 15px;
+    background-color: #3e4c61;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #1b1f26;
+    flex-shrink: 0;
+}
