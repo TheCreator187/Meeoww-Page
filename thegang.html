@@ -65,13 +65,12 @@
                 padding: 20px; /* Add more padding to ensure visibility */
             }
             .grid {
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* Use grid layout to ensure all images are visible */
                 gap: 20px; /* Add more space between grid items */
             }
             .grid-item {
-                flex: 1 1 calc(33.333% - 40px); /* Ensure three items per row with more padding */
-                box-sizing: border-box;
+                padding: 10px; /* Add padding to grid items */
             }
             .info, .hero-text, .grid {
                 font-size: 0.9em; /* Reduce font size for desktop view */
