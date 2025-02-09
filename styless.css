@@ -25,7 +25,6 @@ body, html {
 }
 body {
     padding-top: 60px; /* Add padding to prevent text from clipping with the header */
-    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Navbar */
@@ -43,6 +42,8 @@ body {
     margin: 0 10px;
     color: #fff;
     text-decoration: none;
+    text-decoration: none;
+    color: white;
     background-color: green;
     padding: 5px 10px; /* Adjust padding to make the button smaller */
     border-radius: 5px;
@@ -73,7 +74,6 @@ body {
     min-height: 30%; /* Adjusted height */
     flex: 1; /* Allow sections to expand naturally */
     padding: 20px 0; /* Adjust padding for better spacing */
-    overflow: hidden; /* Prevent content from clipping */
 }
 
 .hero-text {
@@ -101,10 +101,10 @@ body {
     padding: 10px 30px;
     min-height: 20%; /* Adjusted height */
     flex: 1; /* Allow sections to expand naturally */
+    padding: 20px 0; /* Adjust padding for better spacing */
     padding: 40px 40px; /* Further increase padding for better spacing */
     margin-bottom: 50px; /* Further increase margin to ensure content is not cut off */
     margin-top: 25px; /* Move section 25px downward */
-    overflow: hidden; /* Prevent content from clipping */
 }
 
 .grid-section h2 {
@@ -139,6 +139,8 @@ body {
     vertical-align: middle; /* Remove gray area in mobile view */
     max-width: 100%; /* Ensure image does not exceed container width */
     object-fit: cover; /* Ensure the image covers the container */
+    width: 100%; /* Ensure images take full width of their container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Ensure images are responsive */
@@ -244,7 +246,6 @@ body {
     flex: 1; /* Allow sections to expand naturally */
     padding: 20px 0; /* Adjust padding for better spacing */
     margin-bottom: 50px; /* Add margin to separate sections */
-    overflow: hidden; /* Prevent content from clipping */
 }
 
 .info {
