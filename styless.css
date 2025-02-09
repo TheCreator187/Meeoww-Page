@@ -136,33 +136,6 @@ header, .footer {
     .image-container img {
         width: 100%; /* Ensures images take full width on smaller screens */
     }
-    .hero {
-        margin-top: 10%; /* Lower hero section by 10% */
-    }
-    .grid-section {
-        margin-top: 10%; /* Lower grid section by 10% */
-    }
-    .info-section {
-        margin-top: 10%; /* Lower info section by 10% */
-    }
-    .info-section.reverse-layout {
-        margin-top: 10%; /* Lower reverse-layout info section by 10% */
-    }
-    .footer {
-        margin-top: 10%; /* Lower footer by 10% */
-    }
-    .grid-item img {
-        width: 100%; /* Ensure images take full width */
-        height: auto; /* Maintain aspect ratio */
-    }
-    .grid {
-        grid-template-columns: repeat(2, 1fr); /* Adjust grid to fit all images */
-        gap: 10px; /* Adjust gap between grid items */
-    }
-    .grid-item {
-        height: auto; /* Adjust height to fit content */
-        overflow: hidden; /* Prevent content from clipping */
-    }
 }
 
 @media (min-width: 1024px) {
