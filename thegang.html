@@ -14,17 +14,17 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: auto; /* Allow height to be determined by content */
             font-family: 'Glacial Indifference', sans-serif; /* Apply Glacial Indifference font */
         }
         .hero, .grid-section, .info-section {
-            min-height: calc(100vh / 4); /* Further reduce height to fit all sections on one page */
-            padding: 5px 0; /* Further reduce padding to sections */
+            min-height: auto; /* Allow sections to expand naturally */
+            padding: 20px 0; /* Adjust padding for better spacing */
         }
         .hero-text, .info, .grid {
             margin: 0 auto;
             max-width: 1200px;
-            padding: 0 5px; /* Further reduce padding to content */
+            padding: 0 20px; /* Adjust padding for better spacing */
         }
         .logo {
             color: green; /* Change text color to green */
