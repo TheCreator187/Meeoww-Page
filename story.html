@@ -54,10 +54,62 @@
 	  }
 	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
 	    font-family: 'Glacial Indifference', sans-serif;
+	    color: white; /* Change text color to white */
 	  }
 	  .compact-text {
-	    font-size: 0.8em;
-	    line-height: 1.2em;
+	    font-size: 0.9em; /* Increase font size */
+	    line-height: 1.3em; /* Adjust line height */
+	  }
+	  .story-section {
+	    max-width: 800px;
+	    margin: 0 auto;
+	    padding: 20px;
+	    background: none; /* Remove background */
+	    border-radius: 10px;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    font-size: 1em; /* Increase font size */
+	    line-height: 1.5em; /* Adjust line height */
+	    animation: slideIn 1s ease-in-out;
+	  }
+	  .story-section h2 {
+	    text-align: center;
+	    margin-bottom: 20px;
+	    animation: fadeIn 1s ease-in-out;
+	  }
+	  .story-section p {
+	    margin-bottom: 20px;
+	    line-height: 1.5em; /* Adjust line height */
+	    animation: fadeIn 1s ease-in-out;
+	  }
+	  .story-section img, .story-section gif {
+	    max-width: 100%;
+	    border-radius: 10px;
+	    margin-bottom: 20px;
+	    animation: zoomIn 1s ease-in-out;
+	  }
+	  .fade-in {
+	    animation: fadeIn 1s ease-in-out;
+	  }
+	  @keyframes fadeIn {
+	    from { opacity: 0; }
+	    to { opacity: 1; }
+	  }
+	  @keyframes slideIn {
+	    from { transform: translateX(-100%); }
+	    to { transform: translateX(0); }
+	  }
+	  @keyframes zoomIn {
+	    from { transform: scale(0.5); }
+	    to { transform: scale(1); }
+	  }
+	  @media (max-width: 768px) {
+	    .story-section {
+	      padding: 10px;
+	      font-size: 0.9em; /* Adjust font size for mobile */
+	    }
+	    .story-section h2 {
+	      font-size: 1.4em; /* Adjust heading size for mobile */
+	    }
 	  }
 	</style>
 </head>
@@ -152,7 +204,7 @@
     <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div>
   </div>
   <div class="sections compact hidden">
-    <div class="left logo-container"><a href="/index.html" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
     <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
   </div>
 </nav>
@@ -161,7 +213,7 @@
 <nav class="sidebar" data-sidebar-id="1">
   <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
   <div class="content">
-    <a href="/index.html" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+    <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
     <ul class="mainMenu margin-top-3">
       <li><a href="#">Merch</a></li>
       <li><a href="#">$MEEOW Coin</a></li>
@@ -174,7 +226,7 @@
       <li><a href="/license.html">License</a></li>
       <li><a href="/termsconditions.html">Terms & Conditions</a></li>
       <li><a href="/privacypolicy.html">Privacy Policy</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="/contactus.html">Contact Us</a></li>
     </ul>
     <ul class="social opacity-8">
       <li><a href="https://x.com/meeowwfia?s=21"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
@@ -182,42 +234,37 @@
     </ul>
   </div>
 </nav>
-
 	<style>
 	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
 	    font-family: 'Glacial Indifference', sans-serif;
+	    color: white; /* Change text color to white */
 	  }
-	  .contact-form {
-	    max-width: 600px;
+	  .story-section {
+	    max-width: 800px;
 	    margin: 0 auto;
 	    padding: 20px;
-	    background: rgba(255, 255, 255, 0.9);
+	    background: none; /* Remove background */
 	    border-radius: 10px;
 	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    font-size: 1em; /* Increase font size */
+	    line-height: 1.5em; /* Adjust line height */
+	    animation: slideIn 1s ease-in-out;
 	  }
-	  .contact-form h2 {
+	  .story-section h2 {
 	    text-align: center;
 	    margin-bottom: 20px;
+	    animation: fadeIn 1s ease-in-out;
 	  }
-	  .contact-form input, .contact-form textarea {
-	    width: 100%;
-	    padding: 10px;
-	    margin-bottom: 10px;
-	    border: 1px solid #ccc;
-	    border-radius: 5px;
+	  .story-section p {
+	    margin-bottom: 20px;
+	    line-height: 1.5em; /* Adjust line height */
+	    animation: fadeIn 1s ease-in-out;
 	  }
-	  .contact-form button {
-	    width: 100%;
-	    padding: 10px;
-	    background: #ffcc00;
-	    border: none;
-	    border-radius: 5px;
-	    font-size: 16px;
-	    cursor: pointer;
-	    transition: background 0.3s;
-	  }
-	  .contact-form button:hover {
-	    background: #ff9900;
+	  .story-section img, .story-section gif {
+	    max-width: 100%;
+	    border-radius: 10px;
+	    margin-bottom: 20px;
+	    animation: zoomIn 1s ease-in-out;
 	  }
 	  .fade-in {
 	    animation: fadeIn 1s ease-in-out;
@@ -226,24 +273,49 @@
 	    from { opacity: 0; }
 	    to { opacity: 1; }
 	  }
+	  @keyframes slideIn {
+	    from { transform: translateX(-100%); }
+	    to { transform: translateX(0); }
+	  }
+	  @keyframes zoomIn {
+	    from { transform: scale(0.5); }
+	    to { transform: scale(1); }
+	  }
+	  @media (max-width: 768px) {
+	    .story-section {
+	      padding: 10px;
+	      font-size: 0.9em; /* Adjust font size for mobile */
+	    }
+	    .story-section h2 {
+	      font-size: 1.4em; /* Adjust heading size for mobile */
+	    }
+	  }
 	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
 	
-<!-- Contact Form Section -->
+<!-- Story Section -->
 <section class="slide fade-6 kenBurns">
   <div class="content">
     <div class="container">
       <div class="wrap">
         <div class="fix-12-12">
-          <div class="contact-form fade-in">
-            <h2>Contact Us</h2>
-            <form action="/submit_contact" method="post">
-              <input type="text" name="name" placeholder="Your Name" required>
-              <input type="email" name="email" placeholder="Your Email" required>
-              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-              <button type="submit">Send Message</button>
-            </form>
+          <div class="story-section fade-in">
+            <h2>The Story of Meeowwfia</h2>
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">In the shadows of the alleyways and the glimmer of city lights, a secret empire rules with sharp claws and sharper minds. MeeowwFia isn’t just a meme coin—it’s a family, run by the most notorious mafia cats the world has ever seen.</span></p>
+            <img src="/assets/img/car2.png" alt="Meeowwfia Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">From the legendary Don Al Catpone to the cunning Lucky LuGato, every member of the MeeowwFia has a role to play in the family business. These cats don’t just chase mice—they chase power, wealth, and ultimate respect in the underground world of digital currency.</span></p>
+            <img src="/assets/img/cat2.jpg" alt="Meeowwfia Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">With paws on the pulse of the blockchain and claws deep in the game, MeeowwFia is building an empire where loyalty is everything, and betrayal? Well… let’s just say you don’t want to end up sleeping with the goldfish.</span></p>
+            <img src="/assets/img/cat4.jpg" alt="Meeowwfia Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">Join the MeeowwFia family—where every deal is made with a handshake… and a scratch.</span></p>
+            <img src="/assets/img/cat5.jpg" alt="Meeowwfia Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">The Mafia Boss Don Al Catpone came up with an idea to create a meme coin on the Solana blockchain to help MeeowwFia Land flourish. Now, the whole town is helping out and putting in their part.</span></p>
+            <img src="/assets/img/cat6.jpg" alt="Meeowwfia Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">From the tech-savvy cats working on the blockchain to the street-smart felines ensuring the town's safety, everyone has a role to play in this thriving community. The MeeowwFia Land is now a bustling hub of activity, with every cat contributing to the success of the meme coin.</span></p>
+            <img src="/assets/img/cat7.jpg" alt="Meeowwfia Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">Experience the journey of MeeowwFia and become a part of this extraordinary family. Together, we will conquer the digital world, one paw at a time.</span></p>
+            <img src="/assets/img/cat8.jpg" alt="Meeowwfia Image">
           </div>
         </div>
       </div>

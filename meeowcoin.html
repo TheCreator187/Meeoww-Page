@@ -152,7 +152,7 @@
     <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div>
   </div>
   <div class="sections compact hidden">
-    <div class="left logo-container"><a href="/index.html" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
     <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
   </div>
 </nav>
@@ -161,7 +161,7 @@
 <nav class="sidebar" data-sidebar-id="1">
   <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
   <div class="content">
-    <a href="/index.html" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+    <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
     <ul class="mainMenu margin-top-3">
       <li><a href="#">Merch</a></li>
       <li><a href="#">$MEEOW Coin</a></li>
@@ -174,7 +174,7 @@
       <li><a href="/license.html">License</a></li>
       <li><a href="/termsconditions.html">Terms & Conditions</a></li>
       <li><a href="/privacypolicy.html">Privacy Policy</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="/contactus.html">Contact Us</a></li>
     </ul>
     <ul class="social opacity-8">
       <li><a href="https://x.com/meeowwfia?s=21"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
@@ -182,42 +182,65 @@
     </ul>
   </div>
 </nav>
-
 	<style>
+	  .logo-container {
+	    position: absolute;
+	    top: -10px;
+	    left: 10px;
+	    padding: 10px;
+	    background-color: black; /* Set background color to black */
+	  }
+	  .logo-container svg {
+	    filter: invert(1); /* Invert colors to make the logo white */
+	  }
+	  .logo-container.black-background svg {
+	    filter: none; /* Remove inversion to make the logo black */
+	  }
+	  @media (max-width: 768px) {
+	    .logo-container {
+	      position: fixed;
+	      top: -10px;
+	      left: -140px;
+	      padding: 0;
+	    }
+	    body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
+	      font-family: 'Glacial Indifference', sans-serif !important;
+	    }
+	  }
 	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
 	    font-family: 'Glacial Indifference', sans-serif;
+	    color: white; /* Change text color to white */
 	  }
-	  .contact-form {
-	    max-width: 600px;
+	  .compact-text {
+	    font-size: 0.9em; /* Increase font size */
+	    line-height: 1.3em; /* Adjust line height */
+	  }
+	  .story-section {
+	    max-width: 800px;
 	    margin: 0 auto;
 	    padding: 20px;
-	    background: rgba(255, 255, 255, 0.9);
+	    background: none; /* Remove background */
 	    border-radius: 10px;
 	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    font-size: 1em; /* Increase font size */
+	    line-height: 1.5em; /* Adjust line height */
+	    animation: slideIn 1s ease-in-out;
 	  }
-	  .contact-form h2 {
+	  .story-section h2 {
 	    text-align: center;
 	    margin-bottom: 20px;
+	    animation: fadeIn 1s ease-in-out;
 	  }
-	  .contact-form input, .contact-form textarea {
-	    width: 100%;
-	    padding: 10px;
-	    margin-bottom: 10px;
-	    border: 1px solid #ccc;
-	    border-radius: 5px;
+	  .story-section p {
+	    margin-bottom: 20px;
+	    line-height: 1.5em; /* Adjust line height */
+	    animation: fadeIn 1s ease-in-out;
 	  }
-	  .contact-form button {
-	    width: 100%;
-	    padding: 10px;
-	    background: #ffcc00;
-	    border: none;
-	    border-radius: 5px;
-	    font-size: 16px;
-	    cursor: pointer;
-	    transition: background 0.3s;
-	  }
-	  .contact-form button:hover {
-	    background: #ff9900;
+	  .story-section img, .story-section gif {
+	    max-width: 100%;
+	    border-radius: 10px;
+	    margin-bottom: 20px;
+	    animation: zoomIn 1s ease-in-out;
 	  }
 	  .fade-in {
 	    animation: fadeIn 1s ease-in-out;
@@ -226,24 +249,94 @@
 	    from { opacity: 0; }
 	    to { opacity: 1; }
 	  }
+	  @keyframes slideIn {
+	    from { transform: translateX(-100%); }
+	    to { transform: translateX(0); }
+	  }
+	  @keyframes zoomIn {
+	    from { transform: scale(0.5); }
+	    to { transform: scale(1); }
+	  }
+	  @media (max-width: 768px) {
+	    .story-section {
+	      padding: 10px;
+	      font-size: 0.9em; /* Adjust font size for mobile */
+	    }
+	    .story-section h2 {
+	      font-size: 1.4em; /* Adjust heading size for mobile */
+	    }
+	  }
 	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
-	
-<!-- Contact Form Section -->
+		
+<!-- SVG Library -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- ...existing SVG symbols... -->
+</svg>
+
+<!-- Panel Top #05 -->
+<nav class="panel top">
+  <div class="sections desktop">
+    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="center">
+      <ul class="menu">
+        <li><a href="/thegang.html">Characters</a></li>
+        <li><a href="#">Upgrade</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+    </div>
+    <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div>
+  </div>
+  <div class="sections compact hidden">
+    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<nav class="sidebar" data-sidebar-id="1">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+    <ul class="mainMenu margin-top-3">
+      <li><a href="#">Merch</a></li>
+      <li><a href="#">$MEEOW Coin</a></li>
+      <li><a href="#">Tokenomics</a></li>
+      <li><a href="#">Mini-Games</a></li>
+      <li><a href="#">Story</a></li>
+    </ul>
+    <ul class="subMenu small opacity-8">
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/license.html">License</a></li>
+      <li><a href="/termsconditions.html">Terms & Conditions</a></li>
+      <li><a href="/privacypolicy.html">Privacy Policy</a></li>
+      <li><a href="/contactus.html">Contact Us</a></li>
+    </ul>
+    <ul class="social opacity-8">
+      <li><a href="https://x.com/meeowwfia?s=21"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+      <li><a href="https://www.instagram.com/meeowwfia?igsh=MWJ4c2RiZjIxNTF6OQ%3D%3D&utm_source=qr"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MeeowwFia Coins Section -->
 <section class="slide fade-6 kenBurns">
   <div class="content">
     <div class="container">
       <div class="wrap">
         <div class="fix-12-12">
-          <div class="contact-form fade-in">
-            <h2>Contact Us</h2>
-            <form action="/submit_contact" method="post">
-              <input type="text" name="name" placeholder="Your Name" required>
-              <input type="email" name="email" placeholder="Your Email" required>
-              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-              <button type="submit">Send Message</button>
-            </form>
+          <div class="story-section fade-in">
+            <h2>MeeowwFia Coins</h2>
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">MeeowwFia Coins are not just a digital currency; they are the lifeblood of our community. These coins can be earned through various mini-games and activities within the MeeowwFia ecosystem.</span></p>
+            <img src="/assets/img/coin1.png" alt="MeeowwFia Coin Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">Players can use MeeowwFia Coins to purchase in-game items, upgrade their characters, and unlock special features. The more you play, the more you earn, and the more powerful you become in the MeeowwFia world.</span></p>
+            <img src="/assets/img/coin2.png" alt="MeeowwFia Coin Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">But it doesn't stop there. MeeowwFia Coins can also be used as currency in real life. Our partnerships with various merchants allow you to spend your coins on real-world goods and services, making MeeowwFia Coins a versatile and valuable asset.</span></p>
+            <img src="/assets/img/coin3.png" alt="MeeowwFia Coin Image">
+            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">Join the MeeowwFia family and start earning MeeowwFia Coins today. Whether you're a gamer looking to dominate the leaderboards or someone who wants to use digital currency in everyday life, MeeowwFia Coins have something for everyone.</span></p>
+            <img src="/assets/img/coin4.png" alt="MeeowwFia Coin Image">
           </div>
         </div>
       </div>
