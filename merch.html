@@ -54,70 +54,53 @@
 	  }
 	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
 	    font-family: 'Glacial Indifference', sans-serif;
-	    color: white; /* Change text color to white */
 	  }
 	  .compact-text {
-	    font-size: 0.9em; /* Increase font size */
-	    line-height: 1.3em; /* Adjust line height */
+	    font-size: 0.8em;
+	    line-height: 1.2em;
 	  }
-	  .story-section {
-	    max-width: 800px;
-	    margin: 0 auto;
-	    padding: 20px;
-	    background: none; /* Remove background */
-	    border-radius: 10px;
-	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	    font-size: 1em; /* Increase font size */
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: slideIn 1s ease-in-out;
-	  }
-	  .story-section h2 {
-	    text-align: center;
-	    margin-bottom: 20px;
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section p {
-	    margin-bottom: 20px;
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section img, .story-section gif {
-	    max-width: 100%;
-	    border-radius: 10px;
-	    margin-bottom: 20px;
-	    animation: zoomIn 1s ease-in-out;
-	  }
-	  .fade-in {
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  @keyframes fadeIn {
-	    from { opacity: 0; }
-	    to { opacity: 1; }
-	  }
-	  @keyframes slideIn {
-	    from { transform: translateX(-100%); }
-	    to { transform: translateX(0); }
-	  }
-	  @keyframes zoomIn {
-	    from { transform: scale(0.5); }
-	    to { transform: scale(1); }
-	  }
-	  @media (max-width: 768px) {
-	    .story-section {
-	      padding: 10px;
-	      font-size: 0.9em; /* Adjust font size for mobile */
-	    }
-	    .story-section h2 {
-	      font-size: 1.4em; /* Adjust heading size for mobile */
-	    }
-	  }
+      .container {
+          width: 80%;
+          margin: auto;
+          overflow: hidden;
+      }
+      .product {
+          background: #363535;
+          border: 1px solid #ddd;
+          margin: 10px;
+          padding: 10px;
+          text-align: center;
+          transition: transform 0.2s;
+      }
+      .product:hover {
+          transform: scale(1.05);
+      }
+      .product img {
+          max-width: 100%;
+      }
+      .product h3 {
+          margin: 10px 0;
+      }
+      .product p {
+          color: #888;
+      }
+      .product button {
+          background: #333;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background 0.2s;
+      }
+      .product button:hover {
+          background: #555;
+      }
 	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
 		
 <!-- SVG Library -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  
   <symbol id="logo" viewBox="0 0 530 155"><title>Meeoww</title><image href="/assets/img/logo1.png" width="530" height="155"/></symbol>
 
   <symbol id="logo-icon" viewBox="0 0 50 41"><title>Meeoww</title><path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"/><path opacity="0.6" d="M45.5,9h-41C3.7,9,3,8.3,3,7.5v0C3,6.7,3.7,6,4.5,6h41C46.3,6,47,6.7,47,7.5v0C47,8.3,46.3,9,45.5,9z"/><path opacity="0.4" d="M7.5,0h35C43.3,0,44,0.7,44,1.5v0C44,2.3,43.3,3,42.5,3h-35C6.7,3,6,2.3,6,1.5v0C6,0.7,6.7,0,7.5,0z"/></symbol>
@@ -192,7 +175,7 @@
 <!-- Panel Top #05 -->
 <nav class="panel top">
   <div class="sections desktop">
-    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="left logo-container"><a href="/index.html" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
     <div class="center">
       <ul class="menu">
         <li><a href="/thegang.html">Characters</a></li>
@@ -205,7 +188,7 @@
   </div>
   <div class="sections compact hidden">
     <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
-    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
   </div>
 </nav>
 
@@ -216,7 +199,7 @@
     <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
     <ul class="mainMenu margin-top-3">
       <li><a href="#">Merch</a></li>
-      <li><a href="/meeowcoin.html">$MEEOW Coin</a></li>
+      <li><a href="meeowcoin.html">$MEEOW Coin</a></li>
       <li><a href="/tokenomics.html">Tokenomics</a></li>
       <li><a href="#">Mini-Games</a></li>
       <li><a href="/story.html">Story</a></li>
@@ -234,98 +217,34 @@
     </ul>
   </div>
 </nav>
-	<style>
-	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	    font-family: 'Glacial Indifference', sans-serif;
-	    color: white; /* Change text color to white */
-	  }
-	  .story-section {
-	    max-width: 800px;
-	    margin: 0 auto;
-	    padding: 20px;
-	    background: none; /* Remove background */
-	    border-radius: 10px;
-	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	    font-size: 1em; /* Increase font size */
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: slideIn 1s ease-in-out;
-	  }
-	  .story-section h2 {
-	    text-align: center;
-	    margin-bottom: 20px;
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section p {
-	    margin-bottom: 20px;
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section img, .story-section gif {
-	    max-width: 100%;
-	    border-radius: 10px;
-	    margin-bottom: 20px;
-	    animation: zoomIn 1s ease-in-out;
-	  }
-	  .fade-in {
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  @keyframes fadeIn {
-	    from { opacity: 0; }
-	    to { opacity: 1; }
-	  }
-	  @keyframes slideIn {
-	    from { transform: translateX(-100%); }
-	    to { transform: translateX(0); }
-	  }
-	  @keyframes zoomIn {
-	    from { transform: scale(0.5); }
-	    to { transform: scale(1); }
-	  }
-	  @media (max-width: 768px) {
-	    .story-section {
-	      padding: 10px;
-	      font-size: 0.9em; /* Adjust font size for mobile */
-	    }
-	    .story-section h2 {
-	      font-size: 1.4em; /* Adjust heading size for mobile */
-	    }
-	  }
-	</style>
-</head>
-<body class="slides horizontal simplifiedMobile animated">
-	
-<!-- Story Section -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-12-12">
-          <div class="story-section fade-in">
-            <h2>The Story of Meeowwfia</h2>
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">In the shadows of the alleyways and the glimmer of city lights, a secret empire rules with sharp claws and sharper minds. MeeowwFia isn’t just a meme coin—it’s a family, run by the most notorious mafia cats the world has ever seen.</span></p>
-            <img src="/assets/img/car2.png" alt="Meeowwfia Image">
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">From the legendary Don Al Catpone to the cunning Lucky LuGato, every member of the MeeowwFia has a role to play in the family business. These cats don’t just chase mice—they chase power, wealth, and ultimate respect in the underground world of digital currency.</span></p>
-            <img src="/assets/img/cat2.jpg" alt="Meeowwfia Image">
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">With paws on the pulse of the blockchain and claws deep in the game, MeeowwFia is building an empire where loyalty is everything, and betrayal? Well… let’s just say you don’t want to end up sleeping with the goldfish.</span></p>
-            <img src="/assets/img/cat4.jpg" alt="Meeowwfia Image">
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">Join the MeeowwFia family—where every deal is made with a handshake… and a scratch.</span></p>
-            <img src="/assets/img/cat5.jpg" alt="Meeowwfia Image">
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">The Mafia Boss Don Al Catpone came up with an idea to create a meme coin on the Solana blockchain to help MeeowwFia Land flourish. Now, the whole town is helping out and putting in their part.</span></p>
-            <img src="/assets/img/cat6.jpg" alt="Meeowwfia Image">
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">From the tech-savvy cats working on the blockchain to the street-smart felines ensuring the town's safety, everyone has a role to play in this thriving community. The MeeowwFia Land is now a bustling hub of activity, with every cat contributing to the success of the meme coin.</span></p>
-            <img src="/assets/img/cat7.jpg" alt="Meeowwfia Image">
-            <p class="ae-3 fromLeft compact-text"><span class="opacity-8">Experience the journey of MeeowwFia and become a part of this extraordinary family. Together, we will conquer the digital world, one paw at a time.</span></p>
-            <img src="/assets/img/cat8.jpg" alt="Meeowwfia Image">
-          </div>
-        </div>
-      </div>
+    <div<br>
+        <br><br><br><br><br><br><br><br><br>
+<div class="container">
+    <div class="product">
+        <img src="hat.jpg" alt="Meeoww Hat">
+        <h3>Meeoww Hat</h3>
+        <p>$19.99</p>
+        <button>Add to Cart</button>
     </div>
-  </div>
-  <div class="background" style="background-image:url(/assets/img/background/City-Rain.png)"></div>
-</section>
-
-<!-- Loading Progress Bar -->
-<div class="progress-bar blue"></div>
-
+    <div class="product">
+        <img src="shirt.jpg" alt="Meeoww Shirt">
+        <h3>Meeoww Shirt</h3>
+        <p>$24.99</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="toy.jpg" alt="Meeoww Toy">
+        <h3>Meeoww Toy</h3>
+        <p>$14.99</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="comic.jpg" alt="Meeoww Comic Book">
+        <h3>Meeoww Comic Book</h3>
+        <p>$9.99</p>
+        <button>Add to Cart</button>
+    </div>
+    <!-- Add more products as needed -->
+</div>
 </body>
 </html>
