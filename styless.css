@@ -102,6 +102,33 @@ html, body {
     object-fit: cover; /* Ensure the image covers the container */
 }
 
+/* Ensure images are responsive */
+.image-container img {
+    max-width: 100%; /* Prevents the image from exceeding the container width */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Removes default inline space for images */
+    margin: 0 auto;  /* Centers the image if needed */
+}
+
+/* Add padding around the image to separate it from content */
+.image-container {
+    margin-bottom: 20px; /* Adjust spacing below the image */
+    overflow: hidden;    /* Ensures no content is clipped */
+}
+
+/* Optional: Adjust large images in specific sections */
+.image-container img.large {
+    width: 80%; /* Scale down large images */
+    max-width: 600px; /* Set a maximum width for the image */
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .image-container img {
+        width: 100%; /* Ensures images take full width on smaller screens */
+    }
+}
+
 @media (min-width: 1024px) {
     .grid {
         display: grid;
