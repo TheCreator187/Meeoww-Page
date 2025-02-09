@@ -118,6 +118,30 @@ html, body {
     }
 }
 
+@media (max-width: 1024px) {
+    .grid-section {
+        margin-bottom: 20px; /* Add margin to the bottom of the grid section */
+    }
+    .grid-section h2 {
+        margin-left: 35px; /* Move text 10px to the right in mobile view */
+    }
+    .info-section.reverse-layout {
+        display: flex;
+        flex-direction: row-reverse; /* Reverse the order of image and text */
+        align-items: center;
+    }
+    .info-section.reverse-layout .info {
+        margin-right: 20px; /* Add margin to the right of the text */
+    }
+    .grid-section h1 {
+        margin-left: 20px; /* Move text 20px to the right in mobile view */
+    }
+    .grid-section h3 {
+        margin-left: 25px; /* Move text 10px to the right in mobile view */
+        margin-bottom: 20px; /* Add margin to prevent clipping with the grid */
+    }
+}
+
 /* Info Section */
 .info-section {
     display: flex;
