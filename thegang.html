@@ -116,24 +116,29 @@
             .grid-section h1 {
                 margin-left: 20px; /* Move text 20px to the right in mobile view */
             }
+            .grid-section h3 {
+                margin-left: 25px; /* Move text 10px to the right in mobile view */
+            }
         }
         .compact-text {
             line-height: 1.1; /* Further reduce line height for more compact text */
             margin: 5px 0; /* Further reduce margin for more compact text */
             font-size: 0.8em; /* Keep the text smaller */
         }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 10px; /* Add padding for better spacing */
+        }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <header>
-        <div class="navbar">
-            <div class="logo">MeeowwFia Land</div>
-            <div class="nav-links">
-                <a href="/Website/index.html">Home</a>
-            </div>
-        </div>
-    </header>
+    <div class="nav-links">
+        <a href="/Website/index.html">Home</a>
+    </div>
 
 <!-- Info Section -->
 <section class="info-section">
@@ -141,7 +146,7 @@
         <img src="/assets/img/cat7.jpg" alt="Description of the image" style="width: 100%; height: 100%; margin-left: 0px;border-radius: 10px;">
     </div>
     <div class="info">
-        <h1 class="yellow-text">Don Gottipaws</h1>
+        <h3 class="yellow-text">Don Gottipaws</h3>
         <p class="compact-text"> Body Type: Tall, well-built<br>
              Alias: The Dapper Don<br>
              Role in the Family: Public Face & Enforcer<br>
@@ -155,7 +160,7 @@
 
     <!-- Grid Section -->
     <section class="grid-section">
-        <h1 class="purple-text">Henchmen</h1>
+        <h3 class="purple-text">Henchmen</h3>
         <div class="grid">
             <div class="grid-item">
                 <img src="/assets/img/cat1.jpg" alt="Description of image 1" style="width: 100%; height: 100%; border-radius: 10px;">
@@ -184,7 +189,7 @@
             <img src="/assets/img/cat8.jpg" alt="Description of the image" style="width: 100%; height: 100%;border-radius: 10px;">
         </div>
         <div class="info">
-            <h1 class="green-text">Al Catpone</h1>
+            <h3 class="green-text">Al Catpone</h3>
             <p class="compact-text"> Body Type: Stocky, broad-shouldered
                  Alias: The Big Boss
                  Role in the Family: Supreme Meeowwfia Don
@@ -193,16 +198,5 @@
                  Famous Quote: “You pet me once, now you owe me for life".</p>
         </div>
     </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer">
-            <div class="footer-logo">$Meeow</div>
-            <div class="footer-icons">
-                <span>Icon</span>
-
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
