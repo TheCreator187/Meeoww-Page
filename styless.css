@@ -168,6 +168,38 @@ body {
     .image-container img {
         width: 100%; /* Ensures images take full width on smaller screens */
     }
+    .hero {
+        margin-top: 10%; /* Lower hero section by 10% */
+    }
+    .grid-section {
+        margin-top: 10%; /* Lower grid section by 10% */
+    }
+    .info-section {
+        margin-top: 10%; /* Lower info section by 10% */
+    }
+    .info-section.reverse-layout {
+        margin-top: 10%; /* Lower reverse-layout info section by 10% */
+    }
+    .footer {
+        margin-top: 10%; /* Lower footer by 10% */
+    }
+    .grid-item img {
+        width: 100%; /* Ensure images take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid to fit all images */
+        gap: 10px; /* Adjust gap between grid items */
+    }
+    .hero-text h1, .grid-section h2, .info h2, .grid-section h1, .grid-section h3 {
+        font-size: 0.8rem; /* Make text smaller */
+    }
+    .nav-links a, .nav-button, .info-button {
+        font-size: 0.7em; /* Make button text smaller */
+    }
+    p {
+        font-size: 0.8rem; /* Make paragraph text smaller */
+    }
 }
 
 @media (min-width: 1024px) {
