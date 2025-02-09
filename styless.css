@@ -166,21 +166,6 @@ body {
     .image-container img {
         width: 100%; /* Ensures images take full width on smaller screens */
     }
-    .hero {
-        margin-top: 10%; /* Lower hero section by 10% */
-    }
-    .grid-section {
-        margin-top: 10%; /* Lower grid section by 10% */
-    }
-    .info-section {
-        margin-top: 10%; /* Lower info section by 10% */
-    }
-    .info-section.reverse-layout {
-        margin-top: 10%; /* Lower reverse-layout info section by 10% */
-    }
-    .footer {
-        margin-top: 10%; /* Lower footer by 10% */
-    }
 }
 
 @media (min-width: 1024px) {
