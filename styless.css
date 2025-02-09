@@ -15,18 +15,6 @@ html, body {
     flex-direction: column;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Ensure body and html take full height */
-    display: flex;
-    flex-direction: column;
-    font-family: 'Glacial Indifference', sans-serif; /* Apply Glacial Indifference font */
-}
-body {
-    padding-top: 60px; /* Add padding to prevent text from clipping with the header */
-}
-
 /* Navbar */
 .navbar {
     display: flex;
@@ -35,25 +23,12 @@ body {
     background-color: #1b1f26;
     padding: 10px 30px;
     flex-shrink: 0;
-    outline: none; /* Remove highlight from header */
 }
 
 .nav-links a {
     margin: 0 10px;
     color: #fff;
     text-decoration: none;
-    text-decoration: none;
-    color: white;
-    background-color: green;
-    padding: 5px 10px; /* Adjust padding to make the button smaller */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    outline: none; /* Remove highlight */
-    font-size: 0.8em; /* Adjust font size to make the button smaller */
-}
-
-.nav-links a:hover {
-    background-color: darkgreen;
 }
 
 .nav-button {
@@ -72,15 +47,10 @@ body {
     flex-grow: 1;
     padding: 20px;
     min-height: 30%; /* Adjusted height */
-    flex: 1; /* Allow sections to expand naturally */
-    padding: 20px 0; /* Adjust padding for better spacing */
 }
 
 .hero-text {
     width: 50%;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px; /* Adjust padding for better spacing */
 }
 
 .hero-text h1 {
@@ -100,17 +70,11 @@ body {
     flex-grow: 1;
     padding: 10px 30px;
     min-height: 20%; /* Adjusted height */
-    flex: 1; /* Allow sections to expand naturally */
-    padding: 20px 0; /* Adjust padding for better spacing */
-    padding: 40px 40px; /* Further increase padding for better spacing */
-    margin-bottom: 50px; /* Further increase margin to ensure content is not cut off */
-    margin-top: 25px; /* Move section 25px downward */
 }
 
 .grid-section h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    margin-left: 35px; /* Move text 10px to the right in mobile view */
 }
 
 .grid {
@@ -120,9 +84,6 @@ body {
     height: 70%;
     align-items: center;
     justify-items: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px; /* Adjust padding for better spacing */
 }
 
 .grid-item {
@@ -139,8 +100,6 @@ body {
     vertical-align: middle; /* Remove gray area in mobile view */
     max-width: 100%; /* Ensure image does not exceed container width */
     object-fit: cover; /* Ensure the image covers the container */
-    width: 100%; /* Ensure images take full width of their container */
-    height: auto; /* Maintain aspect ratio */
 }
 
 /* Ensure images are responsive */
@@ -168,76 +127,21 @@ body {
     .image-container img {
         width: 100%; /* Ensures images take full width on smaller screens */
     }
-    .hero {
-        margin-top: 10%; /* Lower hero section by 10% */
-    }
-    .grid-section {
-        margin-top: 10%; /* Lower grid section by 10% */
-    }
-    .info-section {
-        margin-top: 10%; /* Lower info section by 10% */
-    }
-    .info-section.reverse-layout {
-        margin-top: 10%; /* Lower reverse-layout info section by 10% */
-    }
-    .footer {
-        margin-top: 10%; /* Lower footer by 10% */
-    }
-    .grid-item img {
-        width: 100%; /* Ensure images take full width */
-        height: auto; /* Maintain aspect ratio */
-    }
-    .grid {
-        grid-template-columns: repeat(2, 1fr); /* Adjust grid to fit all images */
-        gap: 10px; /* Adjust gap between grid items */
-    }
-    .hero-text h1, .grid-section h2, .info h2, .grid-section h1, .grid-section h3 {
-        font-size: 0.8rem; /* Make text smaller */
-    }
-    .nav-links a, .nav-button, .info-button {
-        font-size: 0.7em; /* Make button text smaller */
-    }
-    p {
-        font-size: 0.8rem; /* Make paragraph text smaller */
-    }
 }
 
 @media (min-width: 1024px) {
     .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* Use grid layout to ensure all images are visible */
-        gap: 15px; /* Decrease space between grid items */
-        grid-auto-rows: minmax(125px, auto); /* Ensure grid extends to show all images */
-        justify-items: end; /* Align grid items to the right */
+        gap: 20px; /* Add more space between grid items */
+        grid-auto-rows: minmax(200px, auto); /* Ensure grid extends to show all images */
     }
     .grid-item {
-        padding: 7.5px; /* Decrease padding to grid items */
-    }
-    .grid-item img {
-        height: 50%; /* Lower the height of the images by 50% */
-        width: 50%; /* Lower the width of the images by 50% */
+        padding: 10px; /* Add padding to grid items */
     }
     .info, .hero-text, .grid {
-        font-size: 1em; /* Increase font size for desktop view */
-        margin-bottom: 15px; /* Decrease margin to separate sections */
-    }
-    .info-section {
-        margin-bottom: 50px; /* Decrease margin to separate sections */
-        margin-top: 75px; /* Lower section by 75px */
-    }
-    .grid-section {
-        padding: 30px 30px; /* Decrease padding for better spacing */
-        margin-bottom: 50px; /* Decrease margin to separate sections */
-        margin-top: 150px; /* Lower section by 150px */
-    }
-    .info-section.reverse-layout {
-        margin-top: 200px; /* Lower section by 200px */
-        margin-bottom: 50px; /* Decrease margin to separate sections */
-    }
-    .info-image img {
-        width: 300px; /* Set the width of the info images to 300px */
-        height: 300px; /* Set the height of the info images to 300px */
-        object-fit: cover; /* Ensure the image covers the container */
+        font-size: 0.9em; /* Reduce font size for desktop view */
+        margin-bottom: 20px; /* Add margin to separate sections */
     }
 }
 
@@ -252,11 +156,9 @@ body {
         display: flex;
         flex-direction: row-reverse; /* Reverse the order of image and text */
         align-items: center;
-        margin-top: 50px; /* Move section 50px downward */
     }
     .info-section.reverse-layout .info {
         margin-right: 20px; /* Add margin to the right of the text */
-        margin-top: 36px; /* Lower the text for Al Catpone by 20% */
     }
     .grid-section h1 {
         margin-left: 20px; /* Move text 20px to the right in mobile view */
@@ -275,16 +177,10 @@ body {
     flex-grow: 1;
     padding: 10px 30px;
     min-height: 20%; /* Adjusted height */
-    flex: 1; /* Allow sections to expand naturally */
-    padding: 20px 0; /* Adjust padding for better spacing */
-    margin-bottom: 50px; /* Add margin to separate sections */
 }
 
 .info {
     width: 60%;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px; /* Adjust padding for better spacing */
 }
 
 .info h2 {
@@ -315,49 +211,4 @@ body {
     padding: 10px 30px;
     background-color: #1b1f26;
     flex-shrink: 0;
-    margin-top: auto; /* Push footer to the bottom */
-}
-
-.logo {
-    color: green; /* Change text color to green */
-    font-size: .9em; /* Make header text size slightly smaller */
-}
-
-.green-text {
-    color: green; /* Change text color to green */
-}
-
-.yellow-text {
-    color: yellow; /* Change text color to yellow */
-}
-
-.purple-text {
-    color: rgb(136, 65, 136); /* Change text color to purple */
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white; /* Ensure header has a background color */
-}
-
-.compact-text {
-    line-height: 1.1; /* Further reduce line height for more compact text */
-    margin: 5px 0; /* Further reduce margin for more compact text */
-    font-size: 0.8em; /* Keep the text smaller */
-}
-
-.nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 10px; /* Add padding for better spacing */
-}
-
-.info-section.reverse-layout {
-    margin-top: 50px; /* Move section 50px downward */
-    margin-bottom: 50px; /* Add margin to separate sections */
 }
