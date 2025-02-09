@@ -224,7 +224,7 @@ body {
     }
     .info-section.reverse-layout .info {
         margin-right: 20px; /* Add margin to the right of the text */
-        margin-top: 30px; /* Lower the text for Al Catpone */
+        margin-top: 36px; /* Lower the text for Al Catpone by 20% */
     }
     .grid-section h1 {
         margin-left: 20px; /* Move text 20px to the right in mobile view */
