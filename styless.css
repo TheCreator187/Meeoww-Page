@@ -87,8 +87,8 @@ html, body {
 }
 
 .grid-item {
-    width: 90%;
-    height: 90%;
+    width: 100%; /* Ensure grid items take full width */
+    height: 100%; /* Ensure grid items take full height */
     background-color: #3e4c61;
     border-radius: 10px;
 }
