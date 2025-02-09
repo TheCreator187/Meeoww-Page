@@ -39,6 +39,11 @@ html, body {
     cursor: pointer;
 }
 
+/* Remove header and footer */
+header, .footer {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -201,14 +206,4 @@ html, body {
     border: none;
     color: white;
     cursor: pointer;
-}
-
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: #1b1f26;
-    flex-shrink: 0;
 }
