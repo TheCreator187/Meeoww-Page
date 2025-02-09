@@ -33,7 +33,14 @@
 	    top: -10px;
 	    left: 10px;
 	    padding: 10px;
+	    background-color: black; /* Set background color to black */
 	  }
+	  .logo-container svg {
+	    filter: invert(1); /* Invert colors to make the logo white */
+	  }
+	  .logo-container.black-background svg {
+        filter: none; /* Remove inversion to make the logo black */
+      }
 	  @media (max-width: 768px) {
 	    .logo-container {
 	      position: fixed;
@@ -296,7 +303,7 @@
     <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="/index.html">Home</a></div>
   </div>
   <div class="sections compact hidden">
-    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="left logo-container"><a href="/index.html" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
     <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
   </div>
 </nav>
@@ -314,11 +321,11 @@
       <li><a href="#">Story</a></li>
     </ul>
     <ul class="subMenu small opacity-8">
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">License</a></li>
-      <li><a href="#">Terms & Conditions</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/license.html">License</a></li>
+      <li><a href="/termsconditions.html">Terms & Conditions</a></li>
+      <li><a href="/privacypolicy.html">Privacy Policy</a></li>
+      <li><a href="/contactus.html">Contact Us</a></li>
     </ul>
     <ul class="social opacity-8">
       <li><a href="https://x.com/meeowwfia?s=21"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
@@ -440,6 +447,25 @@
                 document.getElementById('myModal').style.display = "none";
             }
         }
+
+        // Function to check background color and adjust logo color for mobile view
+        function adjustLogoColor() {
+            const logoContainer = document.querySelector('.logo-container');
+            const backgroundColor = window.getComputedStyle(logoContainer).backgroundColor;
+            if (window.innerWidth <= 768) { // Mobile view
+                if (backgroundColor === 'rgb(0, 0, 0)') { // Black background
+                    logoContainer.classList.remove('black-background');
+                } else {
+                    logoContainer.classList.add('black-background');
+                }
+            } else {
+                logoContainer.classList.remove('black-background');
+            }
+        }
+
+        // Call the function on page load and on window resize
+        window.onload = adjustLogoColor;
+        window.onresize = adjustLogoColor;
     </script>
 
 </body>
