@@ -133,15 +133,28 @@ html, body {
     .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* Use grid layout to ensure all images are visible */
-        gap: 20px; /* Add more space between grid items */
-        grid-auto-rows: minmax(200px, auto); /* Ensure grid extends to show all images */
+        gap: 30px; /* Increase space between grid items */
+        grid-auto-rows: minmax(250px, auto); /* Ensure grid extends to show all images */
     }
     .grid-item {
-        padding: 10px; /* Add padding to grid items */
+        padding: 20px; /* Increase padding to grid items */
     }
     .info, .hero-text, .grid {
-        font-size: 0.9em; /* Reduce font size for desktop view */
-        margin-bottom: 20px; /* Add margin to separate sections */
+        font-size: 1em; /* Adjust font size for desktop view */
+        margin-bottom: 30px; /* Increase margin to separate sections */
+    }
+    .info-section {
+        margin-bottom: 100px; /* Increase margin to separate sections */
+        margin-top: 150px; /* Lower section by 150px */
+    }
+    .grid-section {
+        padding: 60px 60px; /* Further increase padding for better spacing */
+        margin-bottom: 100px; /* Increase margin to separate sections */
+        margin-top: 200px; /* Lower section by 200px */
+    }
+    .info-section.reverse-layout {
+        margin-top: 250px; /* Lower section by 200px */
+        margin-bottom: 100px; /* Increase margin to separate sections */
     }
 }
 
