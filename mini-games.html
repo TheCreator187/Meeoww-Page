@@ -166,7 +166,7 @@
       <li><a href="/merch.html">Merch</a></li>
       <li><a href="meeowcoin.html">$MEEOW Coin</a></li>
       <li><a href="/tokenomics.html">Tokenomics</a></li>
-      <li><a href="/mini-games.html">Mini-Games</a></li>
+      <li><a href="#">Mini-Games</a></li>
       <li><a href="/story.html">Story</a></li>
     </ul>
     <ul class="subMenu small opacity-8">
@@ -183,240 +183,150 @@
   </div>
 </nav>
 
-<!-- Slide 1 (#34) -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-      
-        <div class="fix-12-12">
-          <ul class="flex fixedSpaces verticalCenter reverse">
-            <li class="col-6-12 left middle">
-              <h1 class="ae-1 fromLeft">The Meeowwfia</h1>
-              <p class="ae-2 fromLeft"><span class="opacity-8">In the Family, We Trust, In the Claws,&nbsp;We Reign.</span></p>
-              <a class="button yellow gradient ae-3 fromCenter cropLeft">Buy</a><a class="button white ae-4 fromCenter">Learn more</a>
-            </li>
-            <li class="col-6-12">
-              <img class="ae-4" width="605" src="/assets/img/cat3.png" alt="iPhones Thumbnail" data-action="zoom"/>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(/assets/img/background/City-Rain.png)"></div>
-</section>
+	<style>
+	  .logo-container {
+	    position: absolute;
+	    top: -10px;
+	    left: 10px;
+	    padding: 10px;
+	    background-color: black; /* Set background color to black */
+	  }
+	  .logo-container svg {
+	    filter: invert(1); /* Invert colors to make the logo white */
+	  }
+	  .logo-container.black-background svg {
+	    filter: none; /* Remove inversion to make the logo black */
+	  }
+	  @media (max-width: 768px) {
+	    .logo-container {
+	      position: fixed;
+	      top: -10px;
+	      left: -140px;
+	      padding: 0;
+	    }
+	    body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
+	      font-family: 'Glacial Indifference', sans-serif !important;
+	    }
+	  }
+	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
+	    font-family: 'Glacial Indifference', sans-serif;
+	  }
+	  .compact-text {
+	    font-size: 0.8em;
+	    line-height: 1.2em;
+	  }
+      .container {
+          width: 80%;
+          margin: auto;
+          overflow: hidden;
+      }
+      .game {
+          background: #fff;
+          border: 1px solid #ddd;
+          margin: 10px;
+          padding: 10px;
+          text-align: center;
+          transition: transform 0.2s;
+      }
+      .game:hover {
+          transform: scale(1.05);
+      }
+      .game img {
+          max-width: 100%;
+      }
+      .game h3 {
+          margin: 10px 0;
+      }
+      .game p {
+          color: #888;
+      }
+      .game button {
+          background: #333;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background 0.2s;
+      }
+      .game button:hover {
+          background: #555;
+      }
+	</style>
+</head>
+<body class="slides horizontal simplifiedMobile animated">
+		
+<!-- SVG Library -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- ...existing SVG symbols... -->
+</svg>
 
-<!-- Slide 2 (#60) -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-          
-        <div class="fix-12-12">
-          <ul class="grid">
-            <li class="col-6-12 left">
-              <h1 class="ae-2 fromLeft">MeeowwFia Land</h1>
-              <p class="ae-3 fromLeft compact-text"><span class="opacity-8">In the shadows of the alleyways and the glimmer of city lights, a secret empire rules with sharp claws and sharper minds. <br> <br> 
-                MeeowwFia isn’t just a meme coin—it’s a family, run by the most notorious mafia cats the world has ever seen.
-
-                From the legendary Don Al Catpone to the cunning Lucky LuGato, every member of the MeeowwFia has a role to play in the family business. <br> <br>
-                 These cats don’t just chase mice—they chase power, wealth, and ultimate respect in the underground world of digital currency.
-                
-                With paws on the pulse of the blockchain and claws deep in the game, MeeowwFia is building an empire where loyalty is everything, and betrayal? Well… let’s just say you don’t want to end up sleeping with the goldfish.
-                
-                Join the MeeowwFia family—where every deal is made with a handshake… and a scratch..</span></p>
-              <ul class="tabs controller uppercase bold ae-4 fromCenter" data-slider-id="60-1">
-                <li class="selected">Al Catpone</li>
-                <li>Lucky LuGato</li>
-                <li>Frank Catstello</li>
-              </ul>
-            </li>
-            <li class="col-6-12 left ae-5 fromCenter">
-              <ul class="slider animated margin-top-4" data-slider-id="60-1">
-                <li class="selected fromCenter">
-                  <div class="popupTrigger" data-popup-id="60-1">
-                    <img class="wide" src="/assets/img/catpone.png" alt="Video Thumbnail"/>
-                  </div>
-                </li>
-                <li class="fromCenter">
-                  <div class="popupTrigger" data-popup-id="60-2">
-                    <img class="wide" src="/assets/img/lucky.png" alt="Video Thumbnail"/>
-                  </div>
-                </li>
-                <li class="fromCenter">
-                  <div class="popupTrigger" data-popup-id="60-3">
-                    <img class="wide" src="/assets/img/frank.png" alt="Video Thumbnail"/>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(/assets/img/background/City-Rainy-Night.png)"></div>
-</section>
-
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="60-1">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="#" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="60-2">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="#" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="60-3">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="#" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Slide 3 (#27) -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        
-        <div class="fix-12-12">
-          <ul class="flex verticalCenter">
-            <li class="col-5-12 cell-27">
-              <div class="fix-4-12">
-                <ul class="slider clickable ae-1 fromAbove" data-slider-id="27-2">
-                  <li class="selected"><img src="/assets/img/fam2.png" alt="Apple Watch Thumbnail"style="border-radius: 25px;"/></li>
-                  <li><img src="/assets/img/fam-3.png" alt="Apple Watch Thumbnail" style="border-radius: 25px;"/></li>
-                  <li><img src="/assets/img/fam-4.png" alt="Apple Watch Thumbnail"style="border-radius: 25px;"/></li>
-                  <li><img src="/assets/img/fam-6.png" alt="Apple Watch Thumbnail"style="border-radius: 25px;"/></li>
-                </ul>
-                <ul class="controller dots ae-2 fromCenter margin-top-3" data-slider-id="27-2">
-                  <li class="dot selected"></li>
-                  <li class="dot"></li>
-                  <li class="dot"></li>
-                  <li class="dot"></li>
-                </ul>
-              </div>
-            </li>
-            <li class="col-7-12 left">
-              <h1 class="ae-2 fromRight">The Purrfect Balance of Crime and Family</h1>
-              <div class="ae-3 fromRight">
-                <p class="opacity-8 compact-text">In Meeowwfia Land, loyalty runs deeper than fur. These cats aren’t just your average felines—they’re cunning, money-hungry masterminds who will do whatever it takes to stay on top. But beneath their tough, mafia-style exterior lies an unshakable sense of family. <br> <br>
-
-                  At the heart of Meeowwfia is a powerful family: the ruthless yet calculated mafia boss, his devoted housewife who keeps the family in line, and their mischievous yet ambitious kids, all destined to follow in their father’s paw prints. Whether they’re plotting their next big heist or sitting down for a family dinner, one thing is clear—Meeowwfia cats always take care of their own. <br> <br>
-                  
-                  Join the Meeowwfia, where crime pays, but family comes &nbsp;first.</p>
-              </div>
-              <div class="relative">
-                <a href="thegang.html">
-                  <img src="/assets/img/claw.png" class="ae-3 fromCenter app-26" alt="app"/>
-                </a>
-                <div class="text-26">
-                  <h3 class="ae-3 fromRight">Meet The Gang</h3>
-                  <div class="ae-5 fromRight">
-                    <p class="tiny opacity-6">Meet all 25 unique MeeowwFia Characters</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(/assets/img/background/japan-street-Dark.png)"></div>
-</section>
-
-
-
-<!-- Panel Bottom #01 nice -->
-<nav class="panel bottom forceMobileView">
+<!-- Panel Top #05 -->
+<nav class="panel top">
   <div class="sections desktop">
-    <div class="left"><a href="#" class="opacity-8">Available <svg style="height:21px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apple"></use></svg> iPhone</a></div>
-    <div class="center"><span class="nextSlide"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></span></div>
-    <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
+    <div class="left logo-container"><a href="/index.html" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="center">
+      <ul class="menu">
+        <li><a href="/thegang.html">Characters</a></li>
+        <li><a href="#">Upgrade</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+    </div>
+    <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div>
   </div>
   <div class="sections compact hidden">
-    <div class="right">
-      <span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span>
-    </div>
+    <div class="left logo-container"><a href="#" title="Slides Framework"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
   </div>
 </nav>
 
-<!-- Share Window -->
-<div class="dropdown share bottom right" data-dropdown-id="2" data-text="Take a look at this" data-url="https://designmodo.com" data-pinterest-image="https://designmodo.com/wp-content/uploads/2015/10/Presentation.jpg">
-  <div class="center padding-2">
-    <div class="title">Share</div>
-    <a href="#">Contact us</a>
+<!-- Sidebar -->
+<nav class="sidebar" data-sidebar-id="1">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+    <ul class="mainMenu margin-top-3">
+      <li><a href="#">Mini-Games</a></li>
+      <li><a href="meeowcoin.html">$MEEOW Coin</a></li>
+      <li><a href="/tokenomics.html">Tokenomics</a></li>
+      <li><a href="#">Merch</a></li>
+      <li><a href="/story.html">Story</a></li>
+    </ul>
+    <ul class="subMenu small opacity-8">
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/license.html">License</a></li>
+      <li><a href="/termsconditions.html">Terms & Conditions</a></li>
+      <li><a href="/privacypolicy.html">Privacy Policy</a></li>
+      <li><a href="/contactus.html">Contact Us</a></li>
+    </ul>
+    <ul class="social opacity-8">
+      <li><a href="https://x.com/meeowwfia?s=21"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+      <li><a href="https://www.instagram.com/meeowwfia?igsh=MWJ4c2RiZjIxNTF6OQ%3D%3D&utm_source=qr"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+    </ul>
   </div>
-  <ul>
-    <li class="social-facebook"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb-like"></use></svg></li>
-    <li class="social-twitter"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></li>
-    <li class="social-googlePlus"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#googlePlus"></use></svg></li>
-    <li class="social-linkedin"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use></svg></li>
-    <li class="mail" data-subject="Subject" data-body="Body">share by email</li>
-  </ul>
+</nav>
+<br><br><br><br><br><br>
+
+<div class="container">
+    <div class="game">
+        <img src="game1.jpg" alt="Meeoww Game 1">
+        <h3>Meeoww Game 1</h3>
+        <p>Join the fun and win $MEEOW Coins!</p>
+        <button>Play Now</button>
+    </div>
+    <div class="game">
+        <img src="game2.jpg" alt="Meeoww Game 2">
+        <h3>Meeoww Game 2</h3>
+        <p>Compete and earn $MEEOW Coins!</p>
+        <button>Play Now</button>
+    </div>
+    <div class="game">
+        <img src="game3.jpg" alt="Meeoww Game 3">
+        <h3>Meeoww Game 3</h3>
+        <p>Challenge yourself and win $MEEOW Coins!</p>
+        <button>Play Now</button>
+    </div>
+    <!-- Add more games as needed -->
 </div>
-
-<!-- Loading Progress Bar -->
-<div class="progress-bar blue"></div>
-		
-<script>
-    // Function to check background color and adjust logo color
-    function adjustLogoColor() {
-        const logoContainer = document.querySelector('.logo-container');
-        const parentBackgroundColor = window.getComputedStyle(logoContainer.parentElement).backgroundColor;
-        if (parentBackgroundColor === 'rgb(0, 0, 0)') { // Black background
-            logoContainer.classList.remove('black-background');
-        } else {
-            logoContainer.classList.add('black-background');
-        }
-    }
-
-    // Call the function on page load and on window resize
-    window.onload = adjustLogoColor;
-    window.onresize = adjustLogoColor;
-</script>
-
 </body>
 </html>
