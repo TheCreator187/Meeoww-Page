@@ -290,11 +290,11 @@
 
                   At the heart of Meeowwfia is a powerful family: the ruthless yet calculated mafia boss, his devoted housewife who keeps the family in line, and their mischievous yet ambitious kids, all destined to follow in their father’s paw prints. Whether they’re plotting their next big heist or sitting down for a family dinner, one thing is clear—Meeowwfia cats always take care of their own. <br> <br>
                   
-                  Join the Meeowwfia, where crime pays, but family comes &nbsp;first.</p>
+                  Join the Meeowwfia, where crime pays, but family comes&nbsp;first.</p>
               </div>
               <div class="relative">
                 <a href="thegang.html">
-                  <img src="/assets/img/Shaking-No-Money-GIF-by-Pudgy--unscreen.gif" class="ae-3 fromCenter app-26" alt="app"/>
+                  <img src="/assets/img/gun-real.gif" class="ae-3 fromCenter app-26" alt="app" onclick="playAudio('/assets/wav/gun-cocking-sound.mp3');"/>
                 </a>
                 <div class="text-26">
                   <h3 class="ae-3 fromRight">Meet The Gang</h3>
@@ -346,7 +346,7 @@
 <!-- Panel Bottom #15 -->
 <nav class="panel bottom lastSlideOnly">
   <div class="sections">
-    <div class="center"><a href="/thegang.html" class="opacity-8">Press the <img src="/assets/img/claw.png" style="height:21px;" alt="claw logo"/> To Continue</a></div>
+    <div class="center"><a href="/thegang.html" class="opacity-8">Press Here To Continue</a></div>
   </div>
 </nav>
 
@@ -370,8 +370,9 @@
     window.onresize = adjustLogoColor;
 
     function playAudio(file) {
+      console.log(`Playing audio: ${file}`);
       const audio = new Audio(file);
-      audio.play();
+      audio.play().catch(error => console.error('Error playing audio:', error));
     }
 
     let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
