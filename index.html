@@ -236,8 +236,9 @@
             <li class="col-6-12 left ae-5 fromCenter">
               <ul class="slider animated margin-top-4" data-slider-id="60-1">
                 <li class="selected fromCenter">
-                  <div class="popupTrigger" data-popup-id="60-1">
-                    <img class="wide" src="/assets/img/catpone.png" alt="Video Thumbnail"/>
+                  <div class="audioTrigger">
+                    <img class="wide" src="/assets/img/catpone.png" alt="Audio Thumbnail" onclick="playAudio('/assets/wav/don1.mp3'); incrementClickCounter();"/>
+                    <p id="clickCounter">Clicked 0 times</p>
                   </div>
                 </li>
                 <li class="fromCenter">
@@ -422,6 +423,24 @@
     // Call the function on page load and on window resize
     window.onload = adjustLogoColor;
     window.onresize = adjustLogoColor;
+
+    function playAudio(file) {
+      const audio = new Audio(file);
+      audio.play();
+    }
+
+    let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
+
+    function incrementClickCounter() {
+      clickCount++;
+      localStorage.setItem('clickCount', clickCount);
+      document.getElementById('clickCounter').innerText = `Clicked ${clickCount} times`;
+    }
+
+    // Initialize the click counter display on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('clickCounter').innerText = `Clicked ${clickCount} times`;
+    });
 </script>
 
 </body>
