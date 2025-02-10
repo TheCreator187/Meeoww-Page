@@ -48,12 +48,9 @@
 	      left: -140px;
 	      padding: 0;
 	    }
-	    body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	      font-family: 'Glacial Indifference', sans-serif !important;
-	    }
 	  }
 	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	    font-family: 'Glacial Indifference', sans-serif;
+	    font-family: 'Glacial Indifference', sans-serif !important;
 	  }
 	  .compact-text {
 	    font-size: 0.8em;
@@ -242,13 +239,13 @@
                   </div>
                 </li>
                 <li class="fromCenter">
-                  <div class="popupTrigger" data-popup-id="60-2">
-                    <img class="wide" src="/assets/img/lucky.png" alt="Video Thumbnail"/>
+                  <div class="audioTrigger">
+                    <img class="wide" src="/assets/img/lucky.png" alt="Audio Thumbnail" onclick="playAudio('/assets/wav/lucky1.mp3'); incrementClickCounter();"/>
                   </div>
                 </li>
                 <li class="fromCenter">
-                  <div class="popupTrigger" data-popup-id="60-3">
-                    <img class="wide" src="/assets/img/frank.png" alt="Video Thumbnail"/>
+                  <div class="audioTrigger">
+                    <img class="wide" src="/assets/img/frank.png" alt="Audio Thumbnail" onclick="playAudio('/assets/wav/Frank.mp3'); incrementClickCounter();"/>
                   </div>
                 </li>
               </ul>
@@ -261,58 +258,6 @@
   </div>
   <div class="background" style="background-image:url(/assets/img/background/City-Rainy-Night.png)"></div>
 </section>
-
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="60-1">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="#" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="60-2">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="#" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="60-3">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="#" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <!-- Slide 3 (#27) -->
 <section class="slide fade-6 kenBurns">
@@ -429,13 +374,7 @@
       audio.play();
     }
 
-    let clickCount = localStorage.getItem('clickCount');
-    if (clickCount === null) {
-      clickCount = Math.floor(Math.random() * (456 - 253 + 1)) + 253;
-      localStorage.setItem('clickCount', clickCount);
-    } else {
-      clickCount = parseInt(clickCount);
-    }
+    let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
 
     function incrementClickCounter() {
       clickCount++;
