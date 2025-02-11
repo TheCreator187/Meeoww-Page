@@ -395,9 +395,11 @@
         element.addEventListener('click', (event) => {
           event.preventDefault();
           playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');
-          setTimeout(() => {
-            window.location.href = element.href || element.dataset.href || '#';
-          }, 500); // Adjust delay as needed
+          if (!element.matches('img')) {
+            setTimeout(() => {
+              window.location.href = element.href || element.dataset.href || '#';
+            }, 500); // Adjust delay as needed
+          }
         });
       });
     });
