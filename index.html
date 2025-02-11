@@ -402,6 +402,14 @@
           });
         }
       });
+
+      // Prevent page from scrolling to the top when images are clicked on mobile
+      const images = document.querySelectorAll('img');
+      images.forEach(image => {
+        image.addEventListener('click', (event) => {
+          event.preventDefault();
+        });
+      });
     });
 </script>
 
