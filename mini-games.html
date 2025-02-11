@@ -113,9 +113,30 @@
           background-repeat: no-repeat;
           z-index: -1;
       }
+      .rotate-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1000;
+      }
+      @media (orientation: portrait) {
+        .rotate-message {
+          display: block;
+        }
+      }
 	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
+    <div class="rotate-message">
+      Please rotate your phone to landscape mode to play the game.
+    </div>
     <div class="background" style="background-image:url(/assets/img/background/City-Rain.png)"></div>
 		
 <!-- SVG Library -->
@@ -242,7 +263,7 @@
     <div class="game">
         <div class="game">
             <h3>Play Now</h3>
-            <iframe src="https://www.crazygames.com/embed/gangster-crimes-online-6-mafia-city" frameborder="0" allow="gamepad *; fullscreen;"></iframe>
+            <iframe src="https://www.crazygames.com/embed/gangster-crimes-online-6-mafia-city" frameborder="0" allow="gamepad *; fullscreen;" allowfullscreen></iframe>
         </div>
     </div>
     <!-- Add more games as needed -->
