@@ -374,6 +374,27 @@
       responsive: true
     }
   });
+
+  // Add audio play to all clickable elements except specified images
+  document.addEventListener('DOMContentLoaded', () => {
+    const clickableElements = document.querySelectorAll('a, button, .button, .slider img, .tabs li');
+    clickableElements.forEach(element => {
+      if (!element.matches('.audioTrigger img')) {
+        element.addEventListener('click', (event) => {
+          event.preventDefault();
+          playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');
+          setTimeout(() => {
+            window.location.href = element.href || element.dataset.href || '#';
+          }, 500); // Adjust delay as needed
+        });
+      }
+    });
+  });
+
+  function playAudio(url) {
+    const audio = new Audio(url);
+    audio.play();
+  }
 </script>
 
 </body>

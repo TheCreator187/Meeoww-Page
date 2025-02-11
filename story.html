@@ -364,5 +364,57 @@
 <!-- Loading Progress Bar -->
 <div class="progress-bar blue"></div>
 
+<script>
+    // Function to check background color and adjust logo color
+    function adjustLogoColor() {
+        const logoContainer = document.querySelector('.logo-container');
+        const parentBackgroundColor = window.getComputedStyle(logoContainer.parentElement).backgroundColor;
+        if (parentBackgroundColor === 'rgb(0, 0, 0)') { // Black background
+            logoContainer.classList.remove('black-background');
+        } else {
+            logoContainer.classList.add('black-background');
+        }
+    }
+
+    // Call the function on page load and on window resize
+    window.onload = adjustLogoColor;
+    window.onresize = adjustLogoColor;
+
+    function playAudio(file) {
+      console.log(`Playing audio: ${file}`);
+      const audio = new Audio(file);
+      audio.play().catch(error => console.error('Error playing audio:', error));
+    }
+
+    let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
+
+    function incrementClickCounter() {
+      clickCount++;
+      localStorage.setItem('clickCount', clickCount);
+      document.getElementById('clickCounter').innerText = `Clicked ${clickCount} times`;
+    }
+
+    // Initialize the click counter display on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('clickCounter').innerText = `Clicked ${clickCount} times`;
+    });
+
+    // Add audio play to all clickable elements except specified images
+    document.addEventListener('DOMContentLoaded', () => {
+      const clickableElements = document.querySelectorAll('a, button, .button, .slider img, .tabs li');
+      clickableElements.forEach(element => {
+        if (!element.matches('.audioTrigger img')) {
+          element.addEventListener('click', (event) => {
+            event.preventDefault();
+            playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');
+            setTimeout(() => {
+              window.location.href = element.href || element.dataset.href || '#';
+            }, 500); // Adjust delay as needed
+          });
+        }
+      });
+    });
+</script>
+
 </body>
 </html>
