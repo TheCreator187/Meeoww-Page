@@ -388,19 +388,17 @@
       document.getElementById('clickCounter').innerText = `Clicked ${clickCount} times`;
     });
 
-    // Add audio play to all clickable elements except specified images
+    // Add audio play to all clickable elements
     document.addEventListener('DOMContentLoaded', () => {
       const clickableElements = document.querySelectorAll('a, button, .button, .slider img, .tabs li');
       clickableElements.forEach(element => {
-        if (!element.matches('.audioTrigger img')) {
-          element.addEventListener('click', (event) => {
-            event.preventDefault();
-            playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');
-            setTimeout(() => {
-              window.location.href = element.href || element.dataset.href || '#';
-            }, 500); // Adjust delay as needed
-          });
-        }
+        element.addEventListener('click', (event) => {
+          event.preventDefault();
+          playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');
+          setTimeout(() => {
+            window.location.href = element.href || element.dataset.href || '#';
+          }, 500); // Adjust delay as needed
+        });
       });
     });
 </script>
