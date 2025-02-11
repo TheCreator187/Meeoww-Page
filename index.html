@@ -387,22 +387,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('clickCounter').innerText = `Clicked ${clickCount} times`;
     });
-
-    // Add audio play to all clickable elements
-    document.addEventListener('DOMContentLoaded', () => {
-      const clickableElements = document.querySelectorAll('a, button, .button, .slider img, .tabs li, .sidebarTrigger');
-      clickableElements.forEach(element => {
-        element.addEventListener('click', (event) => {
-          event.preventDefault();
-          playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');
-          if (!element.matches('img')) {
-            setTimeout(() => {
-              window.location.href = element.href || element.dataset.href || '#';
-            }, 500); // Adjust delay as needed
-          }
-        });
-      });
-    });
 </script>
 
 </body>
