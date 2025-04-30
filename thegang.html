@@ -64,7 +64,7 @@
             z-index: -1;
         }
 
-        /* New 3D Slider Styles */
+        /* 3D Slider Styles */
         .slider-container {
             perspective: 1000px;
             width: 100%;
@@ -134,7 +134,7 @@
             from { transform: rotateY(0deg); }
             to { transform: rotateY(360deg); }
         }
-        /* Modal Styles (Kept with minor tweaks) */
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -166,27 +166,63 @@
         .close:hover {
             color: black;
         }
-        /* Responsive Adjustments */
+        /* Responsive Adjustments for Mobile */
         @media (max-width: 768px) {
             .slider-container {
-                height: auto;
+                perspective: 600px; /* Reduced perspective for mobile */
+                height: 400px;
                 margin: 20px auto;
             }
             .slider {
-                animation: none;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
+                width: 200px;
+                height: 300px;
+                animation: rotate 30s infinite linear; /* Slower rotation */
             }
             .slider .card {
-                position: static;
-                transform: none !important;
-                width: 80%;
-                max-width: 300px;
+                width: 200px;
+                height: 300px;
             }
+            .slider .card img {
+                height: 65%;
+            }
+            .slider .card h3 {
+                font-size: 1em;
+            }
+            .slider .card p {
+                font-size: 0.8em;
+            }
+            /* Adjusted 3D positioning for mobile */
+            .slider .card:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
+            .slider .card:nth-child(2) { transform: rotateY(36deg) translateZ(200px); }
+            .slider .card:nth-child(3) { transform: rotateY(72deg) translateZ(200px); }
+            .slider .card:nth-child(4) { transform: rotateY(108deg) translateZ(200px); }
+            .slider .card:nth-child(5) { transform: rotateY(144deg) translateZ(200px); }
+            .slider .card:nth-child(6) { transform: rotateY(180deg) translateZ(200px); }
+            .slider .card:nth-child(7) { transform: rotateY(216deg) translateZ(200px); }
+            .slider .card:nth-child(8) { transform: rotateY(252deg) translateZ(200px); }
+            .slider .card:nth-child(9) { transform: rotateY(288deg) translateZ(200px); }
+            .slider .card:nth-child(10) { transform: rotateY(324deg) translateZ(200px); }
             .slider .card:hover {
-                transform: scale(1.05) !important;
+                transform: translateZ(250px) scale(1.05); /* Reduced scale for mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .slider-container {
+                height: 350px;
+            }
+            .slider {
+                width: 180px;
+                height: 250px;
+            }
+            .slider .card {
+                width: 180px;
+                height: 250px;
+            }
+            .slider .card h3 {
+                font-size: 0.9em;
+            }
+            .slider .card p {
+                font-size: 0.7em;
             }
         }
         /* Existing Grid Styles (Kept for bottom/additional grids) */
@@ -229,9 +265,10 @@
 
     <!-- SVG Library (Unchanged) -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <!-- Existing SVG symbols -->
         <symbol id="logo" viewBox="0 0 530 155"><title>Meeoww</title><image href="/assets/img/logo1.png" width="530" height="155"/></symbol>
         <symbol id="logo-icon" viewBox="0 0 50 41"><title>Meeoww</title><path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"/><path opacity="0.6" d="M45.5,9h-41C3.7,9,3,8.3,3,7.5v0C3,6.7,3.7,6,4.5,6h41C46.3,6,47,6.7,47,7.5v0C47,8.3,46.3,9,45.5,9z"/><path opacity="0.4" d="M7.5,0h35C43.3,0,44,0.7,44,1.5v0C44,2.3,43.3,3,42.5,3h-35C6.7,3,6,2.3,6,1.5v0C6,0.7,6.7,0,7.5,0z"/></symbol>
+        <symbol id="menu" viewBox="0 0 18 18"><path d="M16 5h-14c-.6 0-1-.4-1-1 0-.5.4-1 1-1h14c.5 0 1 .4 1 1s-.4 1-1 1zm-14 5h14c.5 0 1-.4 1-1 0-.5-.4-1-1-1h-14c-.6 0-1 .4-1 1s.4 1 1 1zm14 3h-14c-.5 0-1 .4-1 1 0 .5.4 1 1 1h14c.5 0 1-.4 1-1s-.4-1-1-1z"/></symbol>
+
         <symbol id="close" viewBox="0 0 30 30"><path d="M15 0c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15zm5.7 19.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3s-.5-.1-.7-.3l-4.3-4.3-4.3 4.3c-.2.2-.4.3-.7.3s-.5-.1-.7-.3c-.4-.4-.4-1 0-1.4l4.3-4.3-4.3-4.3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l4.3 4.3 4.3-4.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-4.3 4.3 4.3 4.3z"/></symbol>
         <!-- Other SVG symbols unchanged -->
     </svg>
@@ -276,8 +313,8 @@
                 <li><a href="/contactus.html">Contact Us</a></li>
             </ul>
             <ul class="social opacity-8">
-                <li><a href="https://x.com/meeowwfia?s=21"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
-                <li><a href="https://www.instagram.com/meeowwfia?igsh=MWJ4c2RiZjIxNTF6OQ%3D%3D&utm_source=qr"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+                <li><a href="https://x.com/meeowwfia?s=21"><即将删除，请替换为实际图标></a></li>
+                <li><a href="https://www.instagram.com/meeowwfia?igsh=MWJ4c2RiZjIxNTF6OQ%3D%3D&utm_source=qr"><即将删除，请替换为实际图标></a></li>
             </ul>
         </div>
     </nav>
