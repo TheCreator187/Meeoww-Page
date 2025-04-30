@@ -12,7 +12,7 @@
 	<link href="css/slides.min.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom Styles -->
-	<!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
 
 	<!-- jQuery 3.3.1 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,92 +26,6 @@
 	<!-- Fonts and Material Icons -->
 	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap">
- 
-	<style>
-	  .logo-container {
-	    position: absolute;
-	    top: -10px;
-	    left: 10px;
-	    padding: 10px;
-	    background-color: black; /* Set background color to black */
-	  }
-	  .logo-container svg {
-	    filter: invert(1); /* Invert colors to make the logo white */
-	  }
-	  .logo-container.black-background svg {
-	    filter: none; /* Remove inversion to make the logo black */
-	  }
-	  @media (max-width: 768px) {
-	    .logo-container {
-	      position: fixed;
-	      top: -10px;
-	      left: -140px;
-	      padding: 0;
-	    }
-	    body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	      font-family: 'Glacial Indifference', sans-serif !important;
-	    }
-	  }
-	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	    font-family: 'Glacial Indifference', sans-serif;
-	    color: white; /* Change text color to white */
-	  }
-	  .compact-text {
-	    font-size: 0.9em; /* Increase font size */
-	    line-height: 1.3em; /* Adjust line height */
-	  }
-	  .story-section {
-	    max-width: 800px;
-	    margin: 0 auto;
-	    padding: 20px;
-	    background: none; /* Remove background */
-	    border-radius: 10px;
-	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	    font-size: 1em; /* Increase font size */
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: slideIn 1s ease-in-out;
-	  }
-	  .story-section h2 {
-	    text-align: center;
-	    margin-bottom: 20px;
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section p {
-	    margin-bottom: 20px;
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section img, .story-section gif {
-	    max-width: 100%;
-	    border-radius: 10px;
-	    margin-bottom: 20px;
-	    animation: zoomIn 1s ease-in-out;
-	  }
-	  .fade-in {
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  @keyframes fadeIn {
-	    from { opacity: 0; }
-	    to { opacity: 1; }
-	  }
-	  @keyframes slideIn {
-	    from { transform: translateX(-100%); }
-	    to { transform: translateX(0); }
-	  }
-	  @keyframes zoomIn {
-	    from { transform: scale(0.5); }
-	    to { transform: scale(1); }
-	  }
-	  @media (max-width: 768px) {
-	    .story-section {
-	      padding: 10px;
-	      font-size: 0.9em; /* Adjust font size for mobile */
-	    }
-	    .story-section h2 {
-	      font-size: 1.4em; /* Adjust heading size for mobile */
-	    }
-	  }
-	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
 		
@@ -234,63 +148,6 @@
     </ul>
   </div>
 </nav>
-	<style>
-	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	    font-family: 'Glacial Indifference', sans-serif;
-	    color: white; /* Change text color to white */
-	  }
-	  .story-section {
-	    max-width: 800px;
-	    margin: 0 auto;
-	    padding: 20px;
-	    background: none; /* Remove background */
-	    border-radius: 10px;
-	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	    font-size: 1em; /* Increase font size */
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: slideIn 1s ease-in-out;
-	  }
-	  .story-section h2 {
-	    text-align: center;
-	    margin-bottom: 20px;
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section p {
-	    margin-bottom: 20px;
-	    line-height: 1.5em; /* Adjust line height */
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  .story-section img, .story-section gif {
-	    max-width: 100%;
-	    border-radius: 10px;
-	    margin-bottom: 20px;
-	    animation: zoomIn 1s ease-in-out;
-	  }
-	  .fade-in {
-	    animation: fadeIn 1s ease-in-out;
-	  }
-	  @keyframes fadeIn {
-	    from { opacity: 0; }
-	    to { opacity: 1; }
-	  }
-	  @keyframes slideIn {
-	    from { transform: translateX(-100%); }
-	    to { transform: translateX(0); }
-	  }
-	  @keyframes zoomIn {
-	    from { transform: scale(0.5); }
-	    to { transform: scale(1); }
-	  }
-	  @media (max-width: 768px) {
-	    .story-section {
-	      padding: 10px;
-	      font-size: 0.9em; /* Adjust font size for mobile */
-	    }
-	    .story-section h2 {
-	      font-size: 1.4em; /* Adjust heading size for mobile */
-	    }
-	  }
-	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
 	

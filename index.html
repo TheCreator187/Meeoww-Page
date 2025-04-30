@@ -12,7 +12,7 @@
 	<link href="css/slides.min.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom Styles -->
-	<!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
 
 	<!-- jQuery 3.3.1 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,40 +26,6 @@
 	<!-- Fonts and Material Icons -->
 	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap">
- 
-	<style>
-	  .logo-container {
-	    position: absolute;
-	    top: -10px;
-	    left: 10px;
-	    padding: 10px;
-	    background-color: black; /* Set background color to black */
-	  }
-	  .logo-container svg {
-	    filter: invert(1); /* Invert colors to make the logo white */
-	  }
-	  .logo-container.black-background svg {
-	    filter: none; /* Remove inversion to make the logo black */
-	  }
-	  @media (max-width: 768px) {
-	    .logo-container {
-	      position: fixed;
-	      top: -10px;
-	      left: -140px;
-	      padding: 0;
-	    }
-	    body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	      font-family: 'Glacial Indifference', sans-serif !important;
-	    }
-	  }
-	  body, .button, h1, h2, h3, h4, h5, h6, p, a, ul, li, span {
-	    font-family: 'Glacial Indifference', sans-serif !important;
-	  }
-	  .compact-text {
-	    font-size: 0.8em;
-	    line-height: 1.2em;
-	  }
-	</style>
 </head>
 <body class="slides horizontal simplifiedMobile animated">
 		
@@ -143,12 +109,12 @@
     <div class="center">
       <ul class="menu">
         <li><a href="/thegang.html">Characters</a></li>
-        <li><a href="#">Upgrade</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Explore</a></li>
+        <li><a href="/merch.html">Merch</a></li>
+        <li><a href="/tokenomics.html">Tokenomics</a></li>
+        <li><a href="/meeowcoin.html">$MEEOW Coin</a></li>
       </ul>
     </div>
-    <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div>
+    <!--<div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div> -->
   </div>
   <div class="sections compact hidden">
     <div class="left logo-container"><a href="#" title="logo"><svg style="width:350px;height:100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
@@ -237,7 +203,6 @@
                 <li class="selected fromCenter">
                   <div class="audioTrigger">
                     <img class="wide" src="/assets/img/catpone.png" alt="Audio Thumbnail" onclick="playAudio('/assets/wav/don1.mp3'); incrementClickCounter();"/>
-                    <p id="clickCounter">Clicked 0 times</p>
                   </div>
                 </li>
                 <li class="fromCenter">
@@ -271,7 +236,7 @@
           <ul class="flex verticalCenter">
             <li class="col-5-12 cell-27">
               <div class="fix-4-12">
-                <ul class="slider clickable ae-1 fromAbove" data-slider-id="27-2">
+                <ul class="slider ae-1 fromAbove" data-slider-id="27-2">
                   <li class="selected"><img src="/assets/img/fam2.png" alt="Apple Watch Thumbnail" style="border-radius: 25px;" onclick="playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');"/></li>
                   <li><img src="/assets/img/fam-3.png" alt="Apple Watch Thumbnail" style="border-radius: 25px;" onclick="playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');"/></li>
                   <li><img src="/assets/img/fam-4.png" alt="Apple Watch Thumbnail"style="border-radius: 25px;" onclick="playAudio('/assets/wav/Gun Cocking Sound Effect.mp3');"/></li>
