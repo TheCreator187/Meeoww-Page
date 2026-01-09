@@ -10,6 +10,7 @@
 
 	<!-- Compressed Styles -->
 	<link href="css/slides.min.css" rel="stylesheet" type="text/css">
+	<link href="css/navbar.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom Styles -->
 	<!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
@@ -63,10 +64,9 @@
 </head>
 <body class="slides horizontal simplifiedMobile animated">
 		
-<!-- SVG Library -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  
-  <symbol id="logo" viewBox="0 0 530 155"><title>Meeoww</title><image href="/assets/img/logo1.png" width="530" height="155"/></symbol>
+<!-- Include Global Navigation -->
+<div id="navbar-placeholder"></div>
+
 
   <symbol id="logo-icon" viewBox="0 0 50 41"><title>Meeoww</title><path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"/><path opacity="0.6" d="M45.5,9h-41C3.7,9,3,8.3,3,7.5v0C3,6.7,3.7,6,4.5,6h41C46.3,6,47,6.7,47,7.5v0C47,8.3,46.3,9,45.5,9z"/><path opacity="0.4" d="M7.5,0h35C43.3,0,44,0.7,44,1.5v0C44,2.3,43.3,3,42.5,3h-35C6.7,3,6,2.3,6,1.5v0C6,0.7,6.7,0,7.5,0z"/></symbol>
   
@@ -271,6 +271,14 @@
     // Call the function on page load and on window resize
     window.onload = adjustLogoColor;
     window.onresize = adjustLogoColor;
+
+    // Load global navbar
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
 </script>
 
 </body>

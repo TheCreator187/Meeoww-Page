@@ -10,6 +10,7 @@
 
 	<!-- Compressed Styles -->
 	<link href="css/slides.min.css" rel="stylesheet" type="text/css">
+	<link href="css/navbar.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom Styles -->
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -28,6 +29,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap">
 </head>
 <body class="slides horizontal simplifiedMobile animated">
+
+<!-- Include Global Navigation -->
+<div id="navbar-placeholder"></div>
+
     <div class="rotate-message">
       Please rotate your phone to landscape mode to play the game.
     </div>
@@ -162,5 +167,16 @@
     </div>
     <!-- Add more games as needed -->
 </div>
+
+<script>
+  // Load global navbar
+  fetch('/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>
+
 </body>
 </html>

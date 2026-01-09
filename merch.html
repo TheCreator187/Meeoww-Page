@@ -1,599 +1,876 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <title>Meeowwfia Official Merch Store</title>
+    
+    <!-- Navbar CSS -->
+    <link href="css/navbar.css" rel="stylesheet" type="text/css">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <title>Meeowwfia Merch - Official Store (2025 Edition)</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Material+Icons"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap">
-
-  <style>
-    /* --- CSS Variables for Dark Theme --- */
-    :root {
-      --bg-color: #121212; /* Very dark grey */
-      --surface-color: #1e1e1e; /* Slightly lighter grey for surfaces */
-      --primary-color: #bb86fc; /* Vibrant purple for accents */
-      --primary-variant-color: #3700b3;
-      --secondary-color: #03dac6; /* Teal accent */
-      --text-primary: #e0e0e0; /* Light grey for primary text */
-      --text-secondary: #b0b0b0; /* Dimmer grey for secondary text */
-      --border-color: #333333;
-      --button-text-color: #121212; /* Dark text on light buttons */
-      --error-color: #cf6679;
-      --hover-overlay: rgba(255, 255, 255, 0.08); /* Subtle overlay on hover */
-      --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      --button-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-
-      --font-primary: 'Roboto', sans-serif;
-      --font-secondary: 'Glacial Indifference', sans-serif; /* Using your existing font */
-    }
-
-    /* --- Global Styles --- */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-size: 16px; /* Base font size */
-      scroll-behavior: smooth;
-      /* --- KEY FOR SCROLLING (1/3) --- */
-      overflow-y: auto; /* Allows vertical scrolling for the whole page if content overflows */
-      height: 100%; /* Necessary for controlling overflow based on viewport */
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      font-family: var(--font-primary);
-      line-height: 1.6;
-      /* --- KEY FOR SCROLLING (2/3) --- */
-      display: flex; /* Enables flex layout for direct children (header, main, footer) */
-      flex-direction: column; /* Stacks children vertically */
-      min-height: 100vh; /* Ensures body takes at least full viewport height */
-      /* NOTE: No 'overflow' property here */
-    }
-
-    /* Keep background image if desired, adjust styles */
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-size: cover;
-      background-position: center;
-      opacity: 0.1; /* Make it subtle for dark theme */
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--primary-color);
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-secondary); /* Use special font for headers */
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
-    }
-
-    /* --- Header / Navigation --- */
-    .panel.top {
-      background-color: var(--surface-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-      position: fixed; /* Keeps nav fixed at the top */
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      display: flex; /* Use flex to align items inside header */
-      justify-content: center; /* Center the nav section */
-      align-items: center;
-    }
-
-    /* Desktop Navigation specific styles */
-    .panel.top nav { /* Style the nav element containing the menu */
-       width: 100%;
-       display: flex;
-       justify-content: center;
-    }
-
-    .panel.top nav .menu {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-
-    .panel.top nav .menu a {
-        color: var(--text-secondary);
-        font-family: var(--font-secondary);
-        font-weight: 500;
-        padding: 0.5rem 0;
-        transition: color 0.3s ease;
-        position: relative;
-    }
-    .panel.top nav .menu a:hover,
-    .panel.top nav .menu a.active {
-        color: var(--primary-color);
-    }
-    .panel.top nav .menu a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 50%;
-        background-color: var(--primary-color);
-        transition: all 0.3s ease-in-out;
-        transform: translateX(-50%);
-    }
-     .panel.top nav .menu a:hover::after {
-        width: 100%;
-     }
-
-    /* Hiding compact sections - remove if mobile view needed */
-     .panel .sections.compact {
-         display: none;
-     }
-
-
-    /* --- Main Content Area --- */
-    main {
-      padding: 80px 2rem 2rem 2rem; /* Adjusted top padding for fixed header */
-      /* --- KEY FOR SCROLLING (3/3) --- */
-      flex-grow: 1; /* Allows main to expand and take available vertical space */
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      /* NOTE: No 'overflow' property here, allows content to make 'body'/'html' scroll */
-    }
-
-    /* --- Product Grid --- */
-    .product-grid {
-      flex: 3;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .product {
-      background-color: var(--surface-color);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    }
-
-    .product img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-info h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-
-    .product-info p.price {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--secondary-color);
-      margin-bottom: 1rem;
-    }
-
-    .add-to-cart {
-      background-color: var(--primary-color);
-      color: var(--button-text-color);
-      border: none;
-      padding: 0.8rem 1.5rem;
-      font-family: var(--font-primary);
-      font-weight: 500;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      margin-top: auto;
-      text-align: center;
-      box-shadow: var(--button-shadow);
-    }
-
-    .add-to-cart:hover {
-      background-color: var(--primary-variant-color);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
-     .add-to-cart:active {
-       transform: translateY(0);
-       box-shadow: var(--button-shadow);
-     }
-
-    /* --- Cart Section --- */
-    .cart-container {
-      flex: 1;
-      min-width: 280px;
-      background-color: var(--surface-color);
-      border-radius: 12px;
-      padding: 1.5rem;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--card-shadow);
-      align-self: flex-start;
-      position: sticky; /* Makes the cart stick to the top while scrolling page */
-      top: 80px; /* Offset for the fixed header height */
-      max-height: calc(100vh - 100px); /* Limit height (header + some bottom space) */
-      overflow-y: auto; /* Allow internal scrolling *within the cart* if needed */
-    }
-
-     .cart-container h2 {
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.75rem;
-      font-size: 1.5rem;
-      color: var(--text-primary);
-     }
-
-    .cart-items {
-      list-style: none;
-      margin-bottom: 1.5rem;
-      /* Removed max-height here, let the parent (.cart-container) handle scrolling */
-      /* max-height: 300px; */
-      /* overflow-y: auto; */
-    }
-
-    .cart-items li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 0;
-      border-bottom: 1px dashed var(--border-color);
-      font-size: 0.95rem;
-    }
-     .cart-items li:last-child {
-       border-bottom: none;
-     }
-
-    .cart-items span {
-      color: var(--text-secondary);
-    }
-    .cart-items span:first-child {
-      flex-grow: 1;
-      margin-right: 1rem;
-      color: var(--text-primary);
-    }
-
-    .cart-items button.remove-item {
-      background: none;
-      border: none;
-      color: var(--error-color);
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 0.2rem 0.5rem;
-      margin-left: 0.5rem;
-      transition: color 0.3s ease;
-    }
-     .cart-items button.remove-item:hover {
-        color: darken(var(--error-color), 15%);
-     }
-
-    .cart-total {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-color);
-      text-align: right;
-      color: var(--text-primary);
-    }
-
-    .checkout-button {
-      display: block;
-      width: 100%;
-      background-color: var(--secondary-color);
-      color: var(--button-text-color);
-      border: none;
-      padding: 0.9rem 1.5rem;
-      font-family: var(--font-primary);
-      font-weight: bold;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      text-align: center;
-      box-shadow: var(--button-shadow);
-    }
-
-    .checkout-button:hover {
-      background-color: darken(var(--secondary-color), 10%);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
-    .checkout-button:active {
-       transform: translateY(0);
-       box-shadow: var(--button-shadow);
-     }
-
-
-    /* --- Footer --- */
-    footer {
-      background-color: var(--surface-color);
-      border-top: 1px solid var(--border-color);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-top: auto; /* Pushes footer to bottom */
-    }
-
-
-    /* --- Responsive Adjustments --- */
-    @media (max-width: 992px) {
-        main {
-            flex-direction: column; /* Stack grid and cart vertically */
-            /* Ensure main still grows even when stacked */
-             flex-grow: 1;
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .cart-container {
-            position: relative; /* Change sticky to relative on smaller screens */
-            top: auto;
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #fff;
+            padding-top: 70px;
+            min-height: 100vh;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 68, 68, 0.1) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            margin-bottom: 60px;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .hero-section p {
+            font-size: 1.3em;
+            color: #e0e0e0;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 12px 30px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            color: #ffd700;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #ffd700;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff4444;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+        
+        .product-badge.new {
+            background: #ffd700;
+            color: #000;
+        }
+        
+        .product-image {
+            position: relative;
             width: 100%;
-            margin-top: 2rem;
-            max-height: none; /* Remove max-height */
-            align-self: stretch; /* Allow cart to take full width */
+            height: 350px;
+            overflow: hidden;
+            background: #000;
         }
-         .product-grid {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
-    }
-
-    @media (max-width: 768px) {
-        html {
-            font-size: 15px;
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
         }
-        main {
-            padding: 70px 1rem 1rem 1rem; /* Adjust padding */
+        
+        .product-info {
+            padding: 25px;
         }
-        /* Keep header centered but maybe adjust padding/gap */
-        .panel.top {
-             padding: 0.5rem 0.5rem;
+        
+        .product-category {
+            font-size: 0.85em;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
-        .panel.top nav .menu {
-             gap: 1rem; /* Slightly reduce gap */
+        
+        .product-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
         }
-         .product img {
-             height: 200px;
-         }
-         .product-info {
-             padding: 1rem;
-         }
-    }
-
-  </style>
+        
+        .product-description {
+            font-size: 0.95em;
+            color: #b8b8b8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .product-price {
+            font-size: 2em;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .add-to-cart-btn {
+            padding: 12px 25px;
+            background: linear-gradient(145deg, #ffd700, #ffed4e);
+            border: none;
+            border-radius: 30px;
+            color: #000;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+        
+        .add-to-cart-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Shopping Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            right: -400px;
+            top: 70px;
+            width: 400px;
+            height: calc(100vh - 70px);
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-left: 2px solid rgba(255, 215, 0, 0.3);
+            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 25px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-header h2 {
+            color: #ffd700;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-cart:hover {
+            transform: rotate(90deg);
+            color: #ffd700;
+        }
+        
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .qty-btn {
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            color: #ffd700;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .qty-btn:hover {
+            background: #ffd700;
+            color: #000;
+        }
+        
+        .remove-item {
+            background: #ff4444;
+            border: none;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+        
+        .remove-item:hover {
+            background: #ff0000;
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+        }
+        
+        .cart-footer {
+            padding: 25px;
+            border-top: 2px solid rgba(255, 215, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        
+        .cart-total-label {
+            color: #e0e0e0;
+        }
+        
+        .cart-total-amount {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(145deg, #ffd700, #ffed4e);
+            border: none;
+            border-radius: 30px;
+            color: #000;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* Cart Toggle Button */
+        .cart-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(145deg, #ffd700, #ffed4e);
+            border: 4px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .cart-toggle:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+        }
+        
+        .cart-toggle .material-icons {
+            font-size: 35px;
+            color: #000;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4444;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85em;
+            border: 2px solid #000;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2em;
+            }
+            
+            .hero-section p {
+                font-size: 1.1em;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .cart-sidebar.open {
+                right: 0;
+            }
+            
+            .product-name {
+                font-size: 1.3em;
+            }
+            
+            .filter-section {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 40px 15px;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                padding: 0 15px 60px;
+            }
+            
+            .cart-toggle {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .cart-toggle .material-icons {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
-<body class="dark-theme"> <div class="background" style="background-image:url(/assets/img/background/City-Rain.png)"></div>
+<body>
+    <!-- Global Navigation -->
+    <div id="navbar-placeholder"></div>
+    
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>🐱 OFFICIAL MEEOWWFIA MERCH 🐱</h1>
+        <p>Exclusive gear for the family. Show your loyalty in style!</p>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="apparel">Apparel</button>
+            <button class="filter-btn" data-filter="accessories">Accessories</button>
+            <button class="filter-btn" data-filter="collectibles">Collectibles</button>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="apparel">
+                <span class="product-badge new">New</span>
+                <div class="product-image">
+                    <img src="/assets/img/tshirt.png" alt="Meeowwfia T-Shirt">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Apparel</div>
+                    <h3 class="product-name">Classic Meeowwfia Tee</h3>
+                    <p class="product-description">Premium quality cotton t-shirt with iconic Meeowwfia logo. Soft, comfortable, and perfect for showing your support!</p>
+                    <div class="product-footer">
+                        <span class="product-price">$29.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Classic Meeowwfia Tee', 29.99, '/assets/img/tshirt.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <img src="/assets/img/hat.png" alt="Meeowwfia Cap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-name">Meeowwfia Snapback</h3>
+                    <p class="product-description">Stylish snapback cap with embroidered logo. Adjustable fit for all head sizes.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$24.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Meeowwfia Snapback', 24.99, '/assets/img/hat.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card" data-category="apparel">
+                <span class="product-badge">Hot</span>
+                <div class="product-image">
+                    <img src="/assets/img/tshirt.png" alt="Premium Hoodie">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Apparel</div>
+                    <h3 class="product-name">Premium Hoodie</h3>
+                    <p class="product-description">Cozy fleece hoodie perfect for cold nights. Features hood with drawstring and front pocket.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$54.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Premium Hoodie', 54.99, '/assets/img/tshirt.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <img src="/assets/img/toy.png" alt="Meeowwfia Collectible">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-name">Meeowwfia Collectible</h3>
+                    <p class="product-description">Limited edition collectible figure. Perfect for any Meeowwfia fan's collection!</p>
+                    <div class="product-footer">
+                        <span class="product-price">$44.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Meeowwfia Collectible', 44.99, '/assets/img/toy.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card" data-category="collectibles">
+                <span class="product-badge new">Limited</span>
+                <div class="product-image">
+                    <img src="/assets/img/comic.jpg" alt="Meeowwfia Comic">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Collectibles</div>
+                    <h3 class="product-name">Meeowwfia Comic Book</h3>
+                    <p class="product-description">Limited edition comic featuring the full gang's adventures. First issue collector's edition!</p>
+                    <div class="product-footer">
+                        <span class="product-price">$9.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Meeowwfia Comic Book', 9.99, '/assets/img/comic.jpg')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card" data-category="apparel">
+                <div class="product-image">
+                    <img src="/assets/img/tshirt.png" alt="Red Variant Tee">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Apparel</div>
+                    <h3 class="product-name">Red Variant Tee</h3>
+                    <p class="product-description">Bold red colorway of the classic tee. Stand out in the crowd with this vibrant design.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$29.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Red Variant Tee', 29.99, '/assets/img/tshirt.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <img src="/assets/img/hat.png" alt="Black Snapback">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-name">Black Snapback</h3>
+                    <p class="product-description">Classic black snapback with golden embroidered details. Timeless style.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$24.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Black Snapback', 24.99, '/assets/img/hat.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card" data-category="apparel">
+                <div class="product-image">
+                    <img src="/assets/img/tshirt.png" alt="Long Sleeve">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Apparel</div>
+                    <h3 class="product-name">Long Sleeve Tee</h3>
+                    <p class="product-description">Comfortable long sleeve design for cooler weather. Same great quality and design.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$34.99</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Long Sleeve Tee', 34.99, '/assets/img/tshirt.png')">
+                            <span class="material-icons">shopping_cart</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <p>🛒 Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label">Total:</span>
+                <span class="cart-total-amount" id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Cart Toggle Button -->
+    <div class="cart-toggle" onclick="toggleCart()">
+        <span class="material-icons">shopping_bag</span>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
 
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="logo" viewBox="0 0 530 155"><title>Meeoww</title><image href="/assets/img/logo1.png" width="530" height="155"/></symbol>
-    <symbol id="logo-icon" viewBox="0 0 50 41"><title>Meeoww</title><path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"/><path opacity="0.6" d="M45.5,9h-41C3.7,9,3,8.3,3,7.5v0C3,6.7,3.7,6,4.5,6h41C46.3,6,47,6.7,47,7.5v0C47,8.3,46.3,9,45.5,9z"/><path opacity="0.4" d="M7.5,0h35C43.3,0,44,0.7,44,1.5v0C44,2.3,43.3,3,42.5,3h-35C6.7,3,6,2.3,6,1.5v0C6,0.7,6.7,0,7.5,0z"/></symbol>
-    <symbol id="close" viewBox="0 0 30 30"><path d="M15 0c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15zm5.7 19.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3s-.5-.1-.7-.3l-4.3-4.3-4.3 4.3c-.2.2-.4.3-.7.3s-.5-.1-.7-.3c-.4-.4-.4-1 0-1.4l4.3-4.3-4.3-4.3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l4.3 4.3 4.3-4.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-4.3 4.3 4.3 4.3z"/></symbol>
-    <symbol id="menu" viewBox="0 0 18 18"><path d="M16 5h-14c-.6 0-1-.4-1-1 0-.5.4-1 1-1h14c.5 0 1 .4 1 1s-.4 1-1 1zm-14 5h14c.5 0 1-.4 1-1 0-.5-.4-1-1-1h-14c-.6 0-1 .4-1 1s.4 1 1 1zm14 3h-14c-.5 0-1 .4-1 1 0 .5.4 1 1 1h14c.5 0 1-.4 1-1s-.4-1-1-1z"/></symbol>
-    <symbol id="twitter" viewBox="0 1 24 23"><path d="M21.5 7.6v.6c0 6.6-5 14.1-14 14.1-2.8 0-5.4-.8-7.6-2.2l1.2.1c2.3 0 4.4-.8 6.1-2.1-2.2 0-4-1.5-4.6-3.4.3.1.6.1.9.1.5 0 .9-.1 1.3-.2-2.1-.6-3.8-2.6-3.8-5 .7.4 1.4.6 2.2.6-1.3-.9-2.2-2.4-2.2-4.1 0-.9.2-1.8.7-2.5 2.4 3 6.1 5 10.2 5.2-.1-.4-.1-.7-.1-1.1 0-2.7 2.2-5 4.9-5 1.4 0 2.7.6 3.6 1.6 1-.3 2.1-.7 3-1.3-.4 1.2-1.1 2.1-2.2 2.7 1-.1 1.9-.4 2.8-.8-.6 1.1-1.4 2-2.4 2.7z"/></symbol>
-    <symbol id="instagram" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.3"/><path d="M13,0H7C2.2,0,0,2.2,0,7v6c0,4.8,2.1,7,7,7h6c4.8,0,7-2.2,7-7V7C20,2.2,17.9,0,13,0z M10,15.1c-2.8,0-5.1-2.3-5.1-5.1 S7.2,4.9,10,4.9s5.1,2.3,5.1,5.1S12.8,15.1,10,15.1z M15.3,5.9c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2 C16.5,5.3,16,5.9,15.3,5.9z"/></symbol>
-  </svg>
-
-  <header class="panel top">
-      <nav> <ul class="menu">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/merch.html" class="active">Merch</a></li>
-          <li><a href="/story.html">Story</a></li>
-          <li><a href="/meeowcoin.html">$MEEOW Coin</a></li>
-        </ul>
-      </nav>
-      </header>
-
-  <main>
-    <section class="product-grid">
-      <article class="product">
-          <img src="/assets/img/hat.png" alt="Meeoww Hat">
-          <div class="product-info">
-              <h3>Meeoww Hat</h3>
-              <p class="price">$19.99</p>
-              <button class="add-to-cart" data-name="Meeoww Hat" data-price="19.99">Add to Cart</button>
-          </div>
-      </article>
-      <article class="product">
-          <img src="/assets/img/tshirt.png" alt="Meeoww Shirt">
-          <div class="product-info">
-            <h3>Meeoww Shirt</h3>
-            <p class="price">$24.99</p>
-            <button class="add-to-cart" data-name="Meeoww Shirt" data-price="24.99">Add to Cart</button>
-          </div>
-      </article>
-      <article class="product">
-          <img src="/assets/img/toy.png" alt="Meeoww Toy">
-           <div class="product-info">
-            <h3>Meeoww Toy</h3>
-            <p class="price">$44.99</p>
-            <button class="add-to-cart" data-name="Meeoww Toy" data-price="44.99">Add to Cart</button>
-          </div>
-      </article>
-      <article class="product">
-          <img src="/assets/img/comic.jpg" alt="Meeoww Comic Book">
-           <div class="product-info">
-            <h3>Meeoww Comic Book</h3>
-            <p class="price">$9.99</p>
-            <button class="add-to-cart" data-name="Meeoww Comic Book" data-price="9.99">Add to Cart</button>
-          </div>
-      </article>
-
-      <article class="product">
-          <img src="/assets/img/hat.png" alt="Meeoww Hat Duplicate 1">
-          <div class="product-info">
-              <h3>Meeoww Hat (Variant)</h3>
-              <p class="price">$21.99</p>
-              <button class="add-to-cart" data-name="Meeoww Hat Variant" data-price="21.99">Add to Cart</button>
-          </div>
-      </article>
-      <article class="product">
-          <img src="/assets/img/tshirt.png" alt="Meeoww Shirt Duplicate 1">
-          <div class="product-info">
-            <h3>Meeoww Shirt (Red)</h3>
-            <p class="price">$24.99</p>
-            <button class="add-to-cart" data-name="Meeoww Shirt Red" data-price="24.99">Add to Cart</button>
-          </div>
-      </article>
-       <article class="product">
-          <img src="/assets/img/hat.png" alt="Meeoww Hat Duplicate 2">
-          <div class="product-info">
-              <h3>Meeoww Hat (Black)</h3>
-              <p class="price">$19.99</p>
-              <button class="add-to-cart" data-name="Meeoww Hat Black" data-price="19.99">Add to Cart</button>
-          </div>
-      </article>
-      <article class="product">
-          <img src="/assets/img/tshirt.png" alt="Meeoww Shirt Duplicate 2">
-          <div class="product-info">
-            <h3>Meeoww Shirt (Long Sleeve)</h3>
-            <p class="price">$29.99</p>
-            <button class="add-to-cart" data-name="Meeoww Shirt Long" data-price="29.99">Add to Cart</button>
-          </div>
-      </article>
-      </section>
-
-    <aside class="cart-container">
-      <h2>Shopping Cart</h2>
-      <ul class="cart-items">
-        </ul>
-      <div class="cart-total">Total: $0.00</div>
-      <button class="checkout-button">Checkout</button>
-    </aside>
-
-  </main>
-
-  <footer>
-      <div class="footer-content">
-          <p>&copy; 2025 The Official Meeowwfia. All Rights Reserved.</p>
-      </div>
-  </footer>
-
-  <script>
-    const cart = [];
-    const cartItemsContainer = document.querySelector('.cart-items');
-    const cartTotalContainer = document.querySelector('.cart-total');
-    const productGrid = document.querySelector('.product-grid');
-
-    function updateCart() {
-      cartItemsContainer.innerHTML = '';
-      let total = 0;
-
-      if (cart.length === 0) {
-         cartItemsContainer.innerHTML = '<li>Your cart is empty.</li>';
-      } else {
-         cart.forEach(item => {
-           const li = document.createElement('li');
-           li.dataset.itemName = item.name; // Use dataset for easy access
-           li.innerHTML = `
-             <span>${item.name}</span>
-             <span>$${item.price.toFixed(2)}</span>
-             <button class="remove-item" title="Remove item">&times;</button>
-           `;
-           cartItemsContainer.appendChild(li);
-           total += item.price;
-         });
-      }
-      cartTotalContainer.textContent = `Total: $${total.toFixed(2)}`;
-    }
-
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      console.log(`${name} added to cart.`);
-      updateCart();
-    }
-
-    function removeFromCart(name) {
-      const index = cart.findIndex(item => item.name === name);
-      if (index !== -1) {
-        cart.splice(index, 1);
-        console.log(`${name} removed from cart.`);
-        updateCart();
-      }
-    }
-
-    // Event delegation for adding items
-    if (productGrid) { // Check if productGrid exists
-        productGrid.addEventListener('click', (event) => {
-            if (event.target.classList.contains('add-to-cart')) {
-                const button = event.target;
-                const name = button.dataset.name; // Use dataset directly
-                const price = parseFloat(button.dataset.price); // Use dataset directly
-                if (name && !isNaN(price)) {
-                    addToCart(name, price);
-                }
+    
+    <!-- JavaScript -->
+    <script>
+        // Cart data
+        let cart = [];
+        
+        // Add to cart function
+        function addToCart(name, price, image) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
             }
-        });
-    } else {
-        console.error("Product grid container not found!");
-    }
-
-
-    // Event delegation for removing items
-    if (cartItemsContainer) { // Check if cartItemsContainer exists
-        cartItemsContainer.addEventListener('click', (event) => {
-            if (event.target.classList.contains('remove-item')) {
-                const itemName = event.target.closest('li')?.dataset.itemName; // Safer access with optional chaining
-                if (itemName) {
-                    removeFromCart(itemName);
-                }
+            
+            updateCart();
+            showNotification('✓ Added to cart!');
+        }
+        
+        // Update cart display
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            const cartCountSpan = document.getElementById('cartCount');
+            const cartTotalSpan = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<div class="cart-empty"><p>🛒 Your cart is empty</p></div>';
+                cartCountSpan.textContent = '0';
+                cartTotalSpan.textContent = '$0.00';
+                return;
             }
+            
+            let totalItems = 0;
+            let totalPrice = 0;
+            let html = '';
+            
+            cart.forEach((item, index) => {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
+                
+                html += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                                <button class="remove-item" onclick="removeItem(${index})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsDiv.innerHTML = html;
+            cartCountSpan.textContent = totalItems;
+            cartTotalSpan.textContent = `$${totalPrice.toFixed(2)}`;
+        }
+        
+        // Update quantity
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            updateCart();
+        }
+        
+        // Remove item
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+            showNotification('Item removed from cart');
+        }
+        
+        // Toggle cart sidebar
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('open');
+        }
+        
+        // Checkout function
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            const totalAmount = document.getElementById('cartTotal').textContent;
+            alert('🎉 Checkout coming soon!\n\nYour total is: ' + totalAmount + '\n\nThank you for supporting the Meeowwfia family!');
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(145deg, #ffd700, #ffed4e);
+                color: #000;
+                padding: 15px 30px;
+                border-radius: 30px;
+                font-weight: 700;
+                z-index: 10000;
+                box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+        
+        // Filter products
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
-    } else {
-        console.error("Cart items container not found!");
-    }
-
-
-    // Initial cart update on page load
-    updateCart();
-
-    // Removed sidebar JS logic as sidebar was deleted
-
-  </script>
-
+        
+        // Load global navbar
+        fetch('/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
 </body>
 </html>
